@@ -1,200 +1,111 @@
-// ─────────────────────────────────────────────────────────────
-// LAYOUT ENGINE — builds asymmetric rows from gallery-data.js
-// ─────────────────────────────────────────────────────────────
-
-function gi(item) {
-  const d = document.createElement('div');
-  d.className = 'gi';
-  d.innerHTML = `
-    <img src="${item.src}" alt="${item.title}" style="aspect-ratio:${item.ratio};" loading="lazy" />
-    <div class="il"><div class="it">${item.title}</div><div class="im">${item.meta}</div></div>`;
-  d.addEventListener('click', () => openLightbox(item.src, item.title, item.meta));
+function gi(item){
+  const d=document.createElement('div');
+  d.className='gi';
+  const img=document.createElement('img');
+  img.src=item.s; img.alt=item.t;
+  img.style.cssText=`aspect-ratio:${item.r};width:100%;object-fit:cover;`;
+  img.loading='lazy';
+  d.appendChild(img);
+  d.innerHTML+=`<div class="il"><div class="it">${item.t}</div><div class="im">${item.m}</div></div>`;
+  d.addEventListener('click',()=>lb(item.t,item.m,item.s));
   return d;
 }
 
-// Builds rows with alternating asymmetric patterns
-function buildGallery(items, container) {
-  container.innerHTML = '';
-  if (!items || items.length === 0) {
-    container.innerHTML = '<p style="color:#aaa;font-family:Rubik,sans-serif;font-size:13px;">No images yet — add them to gallery-data.js</p>';
-    return;
-  }
-
-  const patterns = ['r-wide', 'r-flip', 'r-three', 'r-wide', 'r-flip', 'r-pair'];
-  let i = 0, p = 0;
-
-  while (i < items.length) {
-    const pat = patterns[p % patterns.length];
-    const row = document.createElement('div');
-    row.className = `g-row ${pat}`;
-
-    if (pat === 'r-wide' || pat === 'r-flip') {
-      if (i + 1 < items.length) {
-        // Check if we should stack on the right
-        if (i + 2 < items.length && pat === 'r-wide' && p % 4 === 0) {
-          row.appendChild(gi(items[i]));
-          const stack = document.createElement('div');
-          stack.className = 'stack';
-          stack.appendChild(gi(items[i+1]));
-          if (i + 2 < items.length) stack.appendChild(gi(items[i+2]));
-          row.appendChild(stack);
-          i += i + 2 < items.length ? 3 : 2;
-        } else {
-          row.appendChild(gi(items[i]));
-          row.appendChild(gi(items[i+1]));
-          i += 2;
-        }
-      } else {
-        row.classList.remove(pat);
-        row.classList.add('r-pair');
-        row.appendChild(gi(items[i]));
-        i++;
-      }
-    } else if (pat === 'r-three') {
-      const count = Math.min(3, items.length - i);
-      for (let k = 0; k < count; k++) row.appendChild(gi(items[i+k]));
-      i += count;
-    } else { // r-pair
-      const count = Math.min(2, items.length - i);
-      for (let k = 0; k < count; k++) row.appendChild(gi(items[i+k]));
-      i += count;
+function buildRows(items,container){
+  container.innerHTML='';
+  if(!items||!items.length){container.innerHTML='<p style="color:#aaa;font-family:Rubik,sans-serif;font-size:13px;font-style:italic;">No images yet</p>';return;}
+  const pats=['r-wide','r-flip','r-three','r-wide','r-pair','r-flip'];
+  let i=0,p=0;
+  while(i<items.length){
+    const pat=pats[p%pats.length];
+    const row=document.createElement('div');
+    row.className='g-row '+pat;
+    if(pat==='r-wide'&&i+2<items.length&&p%3===0){
+      row.appendChild(gi(items[i]));
+      const st=document.createElement('div');st.className='stack';
+      st.appendChild(gi(items[i+1]));st.appendChild(gi(items[i+2]));
+      row.appendChild(st);i+=3;
+    }else if(pat==='r-three'){
+      const c=Math.min(3,items.length-i);
+      for(let k=0;k<c;k++)row.appendChild(gi(items[i+k]));i+=c;
+    }else{
+      const c=Math.min(2,items.length-i);
+      for(let k=0;k<c;k++)row.appendChild(gi(items[i+k]));i+=c;
     }
-
-    container.appendChild(row);
-    p++;
+    container.appendChild(row);p++;
   }
 }
 
-// Build ALL view from all categories combined
-function buildAll(section, container) {
-  const sectionData = GALLERY[section];
-  const all = Object.values(sectionData).flat();
-  buildGallery(all, container);
+function buildView(id,section,cat){
+  const area=document.getElementById('work-area');
+  const v=document.createElement('div');
+  v.className='content-view active';v.id='cv-'+id;
+  const accents={prints:'#7abfb4',ceramics:'#c4896a',drawings:'#a08898'};
+  const accent=accents[section]||'#7abfb4';
+  const sl=section.charAt(0).toUpperCase()+section.slice(1);
+  const cl=cat==='all'?'All works':cat.charAt(0).toUpperCase()+cat.slice(1);
+  v.innerHTML=`<div class="accent-rule" style="background:${accent};"></div><div class="work-section-heading">${sl}</div><div class="work-section-meta">${cl}</div><div class="gb"></div>`;
+  area.appendChild(v);
+  const items=cat==='all'?Object.values(GD[section]).flat():GD[section][cat]||[];
+  buildRows(items,v.querySelector('.gb'));
 }
 
-// ─────────────────────────────────────────────────────────────
-// NAV & PAGE LOGIC
-// ─────────────────────────────────────────────────────────────
-
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.getElementById(id + '-btn');
-  if (btn) btn.classList.add('active');
-  window.scrollTo(0, 0);
+function showCat(section,cat,btn){
+  openOnly(section);
+  document.querySelectorAll('.content-view').forEach(v=>v.classList.remove('active'));
+  const id=section+'-'+cat;
+  let v=document.getElementById('cv-'+id);
+  if(!v)buildView(id,section,cat);
+  else document.getElementById('cv-'+id).classList.add('active');
+  document.querySelectorAll('#lcats-'+section+' .leftnav-cat').forEach(c=>c.classList.remove('active'));
+  if(btn)btn.classList.add('active');
 }
 
-function openOnlyNav(section) {
-  ['prints','ceramics','drawings'].forEach(s => {
-    document.getElementById('lcats-' + s).classList.toggle('open', s === section);
-    document.getElementById('lplus-' + s).classList.toggle('open', s === section);
+function openOnly(s){
+  ['prints','ceramics','drawings'].forEach(x=>{
+    document.getElementById('lcats-'+x).classList.toggle('open',x===s);
+    document.getElementById('lplus-'+x).classList.toggle('open',x===s);
   });
 }
-
-function toggleOnlyNav(section) {
-  const isOpen = document.getElementById('lcats-' + section).classList.contains('open');
-  openOnlyNav(isOpen ? '__none__' : section);
+function toggleNav(s){
+  const open=document.getElementById('lcats-'+s).classList.contains('open');
+  openOnly(open?'__':s);
 }
 
-function showContent(id, btn, section) {
-  openOnlyNav(section);
-  document.querySelectorAll('.content-view').forEach(v => v.classList.remove('active'));
-  const view = document.getElementById('cv-' + id);
-  if (view) {
-    view.classList.add('active');
-  } else {
-    // Build dynamically
-    buildContentView(id, section);
-  }
-  document.querySelectorAll('#lcats-' + section + ' .leftnav-cat').forEach(c => c.classList.remove('active'));
-  if (btn) btn.classList.add('active');
+function showAbout(id,btn){
+  document.querySelectorAll('.about-view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('av-'+id).classList.add('active');
+  document.querySelectorAll('#lcats-about .leftnav-cat').forEach(c=>c.classList.remove('active'));
+  if(btn)btn.classList.add('active');
 }
 
-function buildContentView(id, section) {
-  const area = document.getElementById('work-content-area');
-  // id format: "prints-portraits", "drawings-maps", etc.
-  const parts = id.split('-');
-  const cat = parts.slice(1).join('-');
-
-  const view = document.createElement('div');
-  view.className = 'content-view active';
-  view.id = 'cv-' + id;
-
-  // accent colors per section
-  const accents = { prints: '#7abfb4', ceramics: '#c4896a', drawings: '#a08898' };
-  const accent = accents[section] || '#7abfb4';
-  const sectionLabel = section.charAt(0).toUpperCase() + section.slice(1);
-  const catLabel = cat === 'all' ? 'All works' : cat.charAt(0).toUpperCase() + cat.slice(1).replace('-', ' ');
-
-  view.innerHTML = `
-    <div class="accent-rule" style="background:${accent};"></div>
-    <div class="work-section-heading">${sectionLabel}</div>
-    <div class="work-section-meta">${catLabel}</div>
-    <div class="gallery-build"></div>`;
-
-  area.appendChild(view);
-
-  const galleryEl = view.querySelector('.gallery-build');
-  if (cat === 'all') {
-    buildAll(section, galleryEl);
-  } else {
-    const items = GALLERY[section] && GALLERY[section][cat.replace('-', '')] || [];
-    buildGallery(items, galleryEl);
-  }
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  const b=document.getElementById(id+'-btn');if(b)b.classList.add('active');
+  window.scrollTo(0,0);
 }
 
-function showAbout(id, btn) {
-  document.querySelectorAll('.about-view').forEach(v => v.classList.remove('active'));
-  document.getElementById('av-' + id).classList.add('active');
-  document.querySelectorAll('#lcats-about .leftnav-cat').forEach(c => c.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-}
-
-// ─────────────────────────────────────────────────────────────
-// LIGHTBOX
-// ─────────────────────────────────────────────────────────────
-
-function openLightbox(src, title, meta) {
-  const img = document.getElementById('lightbox-img');
-  img.src = src;
-  img.style.display = src ? 'block' : 'none';
-  document.getElementById('lightbox-title').textContent = title;
-  document.getElementById('lightbox-meta').textContent = meta;
+function lb(t,m,s){
+  document.getElementById('lb-title').textContent=t;
+  document.getElementById('lb-meta').textContent=m;
+  const i=document.getElementById('lb-img');i.src=s;i.style.display=s?'block':'none';
   document.getElementById('lightbox').classList.add('open');
 }
+function closeLb(){document.getElementById('lightbox').classList.remove('open');}
 
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-}
-
-// ─────────────────────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────────────────────
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('home-link').addEventListener('click', () => showPage('home'));
-  document.getElementById('work-btn').addEventListener('click', () => {
-    showPage('work');
-    openOnlyNav('prints');
-    showContent('prints-all', document.querySelector('#lcats-prints .leftnav-cat'), 'prints');
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('home-link').addEventListener('click',()=>showPage('home'));
+  document.getElementById('work-btn').addEventListener('click',()=>{
+    showPage('work');openOnly('prints');
+    showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));
   });
-  document.getElementById('about-btn').addEventListener('click', () => showPage('about'));
-  document.getElementById('contact-btn').addEventListener('click', () => showPage('contact'));
-
-  document.getElementById('lnav-prints-btn').addEventListener('click', () => {
-    toggleOnlyNav('prints');
-    showContent('prints-all', document.querySelector('#lcats-prints .leftnav-cat'), 'prints');
-  });
-  document.getElementById('lnav-ceramics-btn').addEventListener('click', () => {
-    toggleOnlyNav('ceramics');
-    showContent('ceramics-all', document.querySelector('#lcats-ceramics .leftnav-cat'), 'ceramics');
-  });
-  document.getElementById('lnav-drawings-btn').addEventListener('click', () => {
-    toggleOnlyNav('drawings');
-    showContent('drawings-all', document.querySelector('#lcats-drawings .leftnav-cat'), 'drawings');
-  });
-
-  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-  document.getElementById('lightbox').addEventListener('click', e => { if (e.target === e.currentTarget) closeLightbox(); });
+  document.getElementById('about-btn').addEventListener('click',()=>showPage('about'));
+  document.getElementById('contact-btn').addEventListener('click',()=>showPage('contact'));
+  document.getElementById('lnav-prints').addEventListener('click',()=>{toggleNav('prints');showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));});
+  document.getElementById('lnav-ceramics').addEventListener('click',()=>{toggleNav('ceramics');showCat('ceramics','all',document.querySelector('#lcats-ceramics .leftnav-cat'));});
+  document.getElementById('lnav-drawings').addEventListener('click',()=>{toggleNav('drawings');showCat('drawings','all',document.querySelector('#lcats-drawings .leftnav-cat'));});
+  document.getElementById('lb-close').addEventListener('click',closeLb);
+  document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLb();});
 });
