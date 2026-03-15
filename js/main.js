@@ -1,3 +1,6 @@
+/* ─────────────────────────────────────────────
+   Gallery item builder
+───────────────────────────────────────────── */
 function gi(item){
   const d=document.createElement('div');
   d.className='gi';
@@ -11,9 +14,15 @@ function gi(item){
   return d;
 }
 
+/* ─────────────────────────────────────────────
+   Build gallery rows
+───────────────────────────────────────────── */
 function buildRows(items,container){
   container.innerHTML='';
-  if(!items||!items.length){container.innerHTML='<p style="color:#aaa;font-family:Rubik,sans-serif;font-size:13px;font-style:italic;">No images yet</p>';return;}
+  if(!items||!items.length){
+    container.innerHTML='<p style="color:#aaa;font-family:Rubik,sans-serif;font-size:13px;font-style:italic;">No images yet</p>';
+    return;
+  }
   const pats=['r-wide','r-flip','r-three','r-wide','r-pair','r-flip'];
   let i=0,p=0;
   while(i<items.length){
@@ -36,6 +45,9 @@ function buildRows(items,container){
   }
 }
 
+/* ─────────────────────────────────────────────
+   Build a work content view
+───────────────────────────────────────────── */
 function buildView(id,section,cat){
   const area=document.getElementById('work-area');
   const v=document.createElement('div');
@@ -50,17 +62,24 @@ function buildView(id,section,cat){
   buildRows(items,v.querySelector('.gb'));
 }
 
+/* ─────────────────────────────────────────────
+   Show a work category
+   On mobile: collapses the nav after selecting
+───────────────────────────────────────────── */
 function showCat(section,cat,btn){
-  openOnly(section);
   document.querySelectorAll('.content-view').forEach(v=>v.classList.remove('active'));
   const id=section+'-'+cat;
   let v=document.getElementById('cv-'+id);
-  if(!v)buildView(id,section,cat);
+  if(!v) buildView(id,section,cat);
   else document.getElementById('cv-'+id).classList.add('active');
   document.querySelectorAll('#lcats-'+section+' .leftnav-cat').forEach(c=>c.classList.remove('active'));
-  if(btn)btn.classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(window.innerWidth<=768) closeWorkNav();
 }
 
+/* ─────────────────────────────────────────────
+   Left nav helpers
+───────────────────────────────────────────── */
 function openOnly(s){
   ['prints','ceramics','drawings'].forEach(x=>{
     document.getElementById('lcats-'+x).classList.toggle('open',x===s);
@@ -68,17 +87,29 @@ function openOnly(s){
   });
 }
 function toggleNav(s){
-  const open=document.getElementById('lcats-'+s).classList.contains('open');
-  openOnly(open?'__':s);
+  const isOpen=document.getElementById('lcats-'+s).classList.contains('open');
+  openOnly(isOpen?'__':s);
+}
+function closeWorkNav(){
+  ['prints','ceramics','drawings'].forEach(x=>{
+    document.getElementById('lcats-'+x).classList.remove('open');
+    document.getElementById('lplus-'+x).classList.remove('open');
+  });
 }
 
+/* ─────────────────────────────────────────────
+   About sub-nav
+───────────────────────────────────────────── */
 function showAbout(id,btn){
   document.querySelectorAll('.about-view').forEach(v=>v.classList.remove('active'));
   document.getElementById('av-'+id).classList.add('active');
   document.querySelectorAll('#lcats-about .leftnav-cat').forEach(c=>c.classList.remove('active'));
-  if(btn)btn.classList.add('active');
+  if(btn) btn.classList.add('active');
 }
 
+/* ─────────────────────────────────────────────
+   Page switching
+───────────────────────────────────────────── */
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -87,6 +118,9 @@ function showPage(id){
   window.scrollTo(0,0);
 }
 
+/* ─────────────────────────────────────────────
+   Lightbox
+───────────────────────────────────────────── */
 function lb(t,m,s){
   document.getElementById('lb-title').textContent=t;
   document.getElementById('lb-meta').textContent=m;
@@ -95,17 +129,59 @@ function lb(t,m,s){
 }
 function closeLb(){document.getElementById('lightbox').classList.remove('open');}
 
+/* ─────────────────────────────────────────────
+   Mobile menu helper
+───────────────────────────────────────────── */
+function closeMobileMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+/* ─────────────────────────────────────────────
+   Init
+───────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded',()=>{
+
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click',()=>{
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+
+  // Mobile menu items
+  document.getElementById('mob-work-btn').addEventListener('click',()=>{
+    showPage('work');
+    closeWorkNav();
+    closeMobileMenu();
+  });
+  document.getElementById('mob-about-btn').addEventListener('click',()=>{
+    showPage('about');
+    closeMobileMenu();
+  });
+  document.getElementById('mob-contact-btn').addEventListener('click',()=>{
+    showPage('contact');
+    closeMobileMenu();
+  });
+
+  // Desktop nav
   document.getElementById('home-link').addEventListener('click',()=>showPage('home'));
   document.getElementById('work-btn').addEventListener('click',()=>{
-    showPage('work');openOnly('prints');
+    showPage('work');
+    openOnly('prints');
     showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));
   });
   document.getElementById('about-btn').addEventListener('click',()=>showPage('about'));
   document.getElementById('contact-btn').addEventListener('click',()=>showPage('contact'));
-  document.getElementById('lnav-prints').addEventListener('click',()=>{toggleNav('prints');showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));});
-  document.getElementById('lnav-ceramics').addEventListener('click',()=>{toggleNav('ceramics');showCat('ceramics','all',document.querySelector('#lcats-ceramics .leftnav-cat'));});
-  document.getElementById('lnav-drawings').addEventListener('click',()=>{toggleNav('drawings');showCat('drawings','all',document.querySelector('#lcats-drawings .leftnav-cat'));});
+
+  // Work left nav headings — toggle open/closed
+  document.getElementById('lnav-prints').addEventListener('click',()=>toggleNav('prints'));
+  document.getElementById('lnav-ceramics').addEventListener('click',()=>toggleNav('ceramics'));
+  document.getElementById('lnav-drawings').addEventListener('click',()=>toggleNav('drawings'));
+
+  // Lightbox
   document.getElementById('lb-close').addEventListener('click',closeLb);
-  document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLb();});
+  document.getElementById('lightbox').addEventListener('click',e=>{
+    if(e.target===e.currentTarget) closeLb();
+  });
+
 });
