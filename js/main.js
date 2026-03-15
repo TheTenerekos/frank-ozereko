@@ -117,7 +117,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   // Mobile menu items
   document.getElementById('mob-work-btn').addEventListener('click',()=>{
-    showPage('work');closeWorkNav();closeMobileMenu();
+    showPage('work');
+    // Load Prints > All so page isn't blank, but keep nav collapsed on mobile
+    showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));
+    closeWorkNav();
+    closeMobileMenu();
   });
   document.getElementById('mob-about-btn').addEventListener('click',()=>{
     showPage('about');closeMobileMenu();
