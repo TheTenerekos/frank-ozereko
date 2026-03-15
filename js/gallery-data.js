@@ -4,7 +4,7 @@
 // ratio: '3/4' for portrait orientation, '4/3' for landscape
 // ─────────────────────────────────────────────────────────────
 
-const GALLERY = {
+const GD = {
 
   prints: {
     portraits: [
