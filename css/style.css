@@ -143,7 +143,7 @@ footer{background:#2e2c28;margin-top:auto;overflow:hidden;}
   .home-blurb p{font-size:18px;}
   .home-images{grid-template-columns:1fr;padding:0 1rem;gap:.75rem;}
   .work-layout{grid-template-columns:1fr;}
-  .work-leftnav{position:static;height:auto;padding:1rem 1.5rem;border-bottom:.5px solid #ddd;display:flex;flex-wrap:wrap;gap:.25rem 2rem;}
+  .work-leftnav{display:none;}
   .work-content{padding:1.5rem 1rem;}
   .work-section-heading{font-size:22px;}
   .g-row.r-wide,.g-row.r-flip,.g-row.r-pair{grid-template-columns:1fr 1fr;}
