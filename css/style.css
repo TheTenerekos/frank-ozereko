@@ -64,7 +64,9 @@ body{font-family:'Rubik',sans-serif;background:#f5f2ec;color:#111;min-height:100
 .about-hero-text h1{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.1;color:#e8e4dc;font-style:italic;margin-bottom:1.5rem;}
 .about-hero-text p{font-size:13px;line-height:1.9;color:rgba(232,228,220,.7);font-family:'Rubik',sans-serif;font-weight:300;max-width:380px;}
 .about-body-section{padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:900px;}
+.about-body{font-size:13px;line-height:1.9;color:#555;margin-bottom:1.5rem;font-family:'Rubik',sans-serif;font-weight:300;}
 .about-body p{font-size:13px;line-height:1.9;color:#555;margin-bottom:1.5rem;font-family:'Rubik',sans-serif;font-weight:300;}
+.about-view .work-section-heading{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:'Rubik',sans-serif;color:#aaa;font-weight:400;margin-bottom:1.5rem;}
 .about-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aaa;font-family:'Rubik',sans-serif;display:block;margin-bottom:.3rem;}
 .about-contact-strip{background:#f0ece4;border-top:.5px solid #ddd;padding:2rem 3rem;display:flex;gap:4rem;align-items:center;}
 .about-contact-strip .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aaa;font-family:'Rubik',sans-serif;}
