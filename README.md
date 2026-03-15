@@ -20,7 +20,7 @@ frank-ozereko/
 1. Drop the image into the correct `images/` subfolder
 2. Add an entry to `js/gallery-data.js`:
 ```js
-{ src: 'images/prints/assemblies_01.jpg', title: 'Assembly No. 1', meta: 'Screen print, 2024', ratio: '4/3' }
+{ s: 'images/prints/assemblies_01.jpg', t: 'Assembly No. 1', m: 'Screen print, 2024', r: '4/3' }
 ```
 Use `ratio: '3/4'` for portrait, `ratio: '4/3'` for landscape.
 
