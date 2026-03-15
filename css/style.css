@@ -105,7 +105,7 @@ footer{background:#2e2c28;margin-top:auto;overflow:hidden;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ─────────────────────────────────────────────
-   MOBILE MENU — hidden by default everywhere
+   MOBILE MENU
 ───────────────────────────────────────────── */
 .mobile-menu{display:none;background:#f5f2ec;border-top:.5px solid #ddd;}
 .mobile-menu.open{display:block;}
@@ -114,66 +114,40 @@ footer{background:#2e2c28;margin-top:auto;overflow:hidden;}
 .mob-item:hover{background:#ede9e2;}
 
 /* ─────────────────────────────────────────────
-   RESPONSIVE — TABLET & MOBILE (≤768px)
+   RESPONSIVE ≤768px
 ───────────────────────────────────────────── */
 @media(max-width:768px){
-
-  /* Nav */
   .nav-links{display:none;}
   .hamburger{display:flex;}
   .nav-top{padding:1.25rem 1.5rem;}
   .nav-name{font-size:20px;}
-
-  /* Home */
   .hero-wrap{padding:1rem 1rem 0;}
   .home-blurb{padding:1.5rem 1rem;}
   .home-blurb p{font-size:18px;}
   .home-images{grid-template-columns:1fr;padding:0 1rem;gap:.75rem;}
-
-  /* Work — stack nav above content */
   .work-layout{grid-template-columns:1fr;}
-  .work-leftnav{
-    position:static;
-    height:auto;
-    padding:1rem 1.5rem;
-    border-bottom:.5px solid #ddd;
-    display:flex;
-    flex-wrap:wrap;
-    gap:.25rem 2rem;
-  }
+  .work-leftnav{position:static;height:auto;padding:1rem 1.5rem;border-bottom:.5px solid #ddd;display:flex;flex-wrap:wrap;gap:.25rem 2rem;}
   .work-content{padding:1.5rem 1rem;}
   .work-section-heading{font-size:22px;}
-
-  /* Gallery — max 2 columns */
   .g-row.r-wide,.g-row.r-flip,.g-row.r-pair{grid-template-columns:1fr 1fr;}
   .g-row.r-three{grid-template-columns:1fr 1fr;}
-
-  /* About hero — stack vertically */
   .about-hero{grid-template-columns:1fr;max-height:none;}
   .about-hero-img{height:50vw;min-height:200px;}
   .about-hero-text{padding:2rem 1.5rem;}
   .about-hero-text h1{font-size:28px;margin-bottom:1rem;}
   .about-hero-text p{font-size:12px;}
   .about-body-section{grid-template-columns:1fr;gap:1.5rem;padding:1.5rem 1rem;}
-
-  /* Inner pages */
   .inner-page{padding:1.5rem 1rem;}
   .page-heading{font-size:26px;}
   .contact-grid{grid-template-columns:1fr;gap:1rem;}
   .contact-intro{font-size:18px;margin-bottom:1.5rem;}
-
-  /* CV */
   .cv-row{grid-template-columns:60px 1fr;gap:.3rem .75rem;}
-
-  /* Footer */
   .footer-name{font-size:clamp(28px,10vw,60px);padding:1.5rem 1rem .75rem;}
-
-  /* Lightbox */
   #lb-img{max-width:95vw;max-height:70vh;}
 }
 
 /* ─────────────────────────────────────────────
-   VERY SMALL (≤480px) — single column gallery
+   RESPONSIVE ≤480px — single column gallery
 ───────────────────────────────────────────── */
 @media(max-width:480px){
   .g-row.r-wide,.g-row.r-flip,.g-row.r-pair,.g-row.r-three{grid-template-columns:1fr;}
