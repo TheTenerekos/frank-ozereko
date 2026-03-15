@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Frank Ozereko</title>
+<link rel="stylesheet" href="css/style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div class="site-nav">
+  <div class="nav-top">
+    <div class="nav-name" id="home-link">Frank Ozereko</div>
+    <div class="nav-links">
+      <div class="nav-btn" id="work-btn">Work</div>
+      <div class="nav-btn" id="about-btn">About</div>
+      <div class="nav-btn" id="contact-btn">Contact</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero-wrap">
+    <img src="images/home/hero.jpg" class="hero-img" alt="Frank Ozereko at work"/>
+  </div>
+  <div class="home-blurb">
+    <p>Printmaker. Ceramicist. Frank Ozereko is an artist and lifelong maker based in Western Massachusetts. His work explores form, surface, and the quiet language of the handmade.</p>
+  </div>
+  <div class="home-images">
+    <img class="home-img" src="images/home/ceramic_hero.jpg" alt="Ceramic sculpture"/>
+    <img class="home-img" src="images/home/print_hero.jpg" alt="Print"/>
+  </div>
+  <div style="height:3rem;"></div>
+</div>
+
+<!-- WORK -->
+<div id="work" class="page">
+  <div class="work-layout">
+    <div class="work-leftnav">
+      <div class="leftnav-section">
+        <div class="leftnav-heading" id="lnav-prints" data-accent="teal">
+          <span class="lplus" id="lplus-prints">+</span><span class="lname">Prints</span>
+        </div>
+        <div class="leftnav-cats" id="lcats-prints">
+          <span class="leftnav-cat active" onclick="showCat('prints','all',this)">All</span>
+          <span class="leftnav-cat" onclick="showCat('prints','assemblies',this)">Assemblies</span>
+          <span class="leftnav-cat" onclick="showCat('prints','portraits',this)">Portraits</span>
+          <span class="leftnav-cat" onclick="showCat('prints','duos',this)">Duos</span>
+          <span class="leftnav-cat" onclick="showCat('prints','trios',this)">Trios</span>
+          <span class="leftnav-cat" onclick="showCat('prints','stilllives',this)">Still lifes</span>
+          <span class="leftnav-cat" onclick="showCat('prints','abstract',this)">Abstract</span>
+        </div>
+      </div>
+      <div class="leftnav-section">
+        <div class="leftnav-heading" id="lnav-ceramics" data-accent="terra">
+          <span class="lplus" id="lplus-ceramics">+</span><span class="lname">Ceramics</span>
+        </div>
+        <div class="leftnav-cats" id="lcats-ceramics">
+          <span class="leftnav-cat" onclick="showCat('ceramics','all',this)">All</span>
+        </div>
+      </div>
+      <div class="leftnav-section">
+        <div class="leftnav-heading" id="lnav-drawings" data-accent="mauve">
+          <span class="lplus" id="lplus-drawings">+</span><span class="lname">Drawings</span>
+        </div>
+        <div class="leftnav-cats" id="lcats-drawings">
+          <span class="leftnav-cat" onclick="showCat('drawings','all',this)">All</span>
+          <span class="leftnav-cat" onclick="showCat('drawings','maps',this)">Maps</span>
+        </div>
+      </div>
+    </div>
+    <div class="work-content" id="work-area"></div>
+  </div>
+</div>
+
+<!-- ABOUT — redesigned -->
+<div id="about" class="page">
+  <!-- full-bleed hero split -->
+  <div class="about-hero">
+    <img class="about-hero-img" src="images/about/frank_studio.jpg" alt="Frank Ozereko in his studio"/>
+    <div class="about-hero-text">
+      <h1>Artist,<br>maker,<br>Western Massachusetts.</h1>
+      <p>Frank Ozereko works in ceramics, printmaking, and drawing. His practice spans over fifty years — from handbuilt ceramic vessels to large-scale woodblock prints, trace prints, and drawings made on atlas maps found in residencies across the world.</p>
+    </div>
+  </div>
+
+  <div class="work-layout">
+    <div class="work-leftnav">
+      <div class="leftnav-section">
+        <div class="leftnav-heading" data-accent="gold">
+          <span class="lplus open">+</span><span class="lname" style="color:#b8995a;">About</span>
+        </div>
+        <div class="leftnav-cats open" id="lcats-about">
+          <span class="leftnav-cat active" onclick="showAbout('biography',this)">Biography</span>
+          <span class="leftnav-cat" onclick="showAbout('statement',this)">Statement</span>
+          <span class="leftnav-cat" onclick="showAbout('cv',this)">CV</span>
+          <span class="leftnav-cat" onclick="showAbout('exhibitions',this)">Exhibitions</span>
+          <span class="leftnav-cat" onclick="showAbout('public',this)">Public collections</span>
+          <span class="leftnav-cat" onclick="showAbout('press',this)">Press</span>
+        </div>
+      </div>
+    </div>
+    <div class="work-content">
+
+      <!-- BIOGRAPHY -->
+      <div class="about-view active" id="av-biography">
+        <div class="accent-rule" style="background:#b8995a;"></div>
+        <div class="work-section-heading">Biography</div>
+        <div style="max-width:580px;margin-top:1.5rem;">
+          <p class="about-body">Frank Ozereko was born in Salem, Massachusetts, a city whose architecture, decorative arts, and China Trade artifacts shaped his abiding interest in the decorated object. He has made two- and three-dimensional art throughout his entire career — prints, drawings, watercolors, paintings, ceramic sculpture, and utilitarian objects — for over fifty years.</p>
+          <p class="about-body">He received his BFA from Massachusetts College of Art, Boston (1973) and his MFA from the New York State College of Ceramics at Alfred University (1976). From 1980 to 2012 he was Professor of Art at the University of Massachusetts, Amherst, where he taught clay, drawing, design, and sculpture, and served as Director of Graduate Programs and Undergraduate Director.</p>
+          <p class="about-body">His work is characterized by horror vacui — a fear of empty space — and an insatiable curiosity that moves across ceramics, printmaking, and drawing without settling into any single style or medium. He has held residencies at UCross Foundation, Wyoming (2012, 2015) and Château Orqueveaux, France. He currently lives and works in Western Massachusetts, and makes prints at Zea Mays Printmaking in Florence, MA.</p>
+          <p class="about-body">He has shared a studio and collaborated throughout his career with his wife, Francine Ozereko. Together they created a 100-foot ceramic wall installation, <em>On the Line</em>, for the Fuller Craft Museum in Brockton, MA, later shown at Logan Airport, Boston.</p>
+
+        </div>
+      </div>
+
+      <!-- STATEMENT -->
+      <div class="about-view" id="av-statement">
+        <div class="accent-rule" style="background:#b8995a;"></div>
+        <div class="work-section-heading">Artist's Statement</div>
+        <div style="max-width:580px;margin-top:1.5rem;">
+          <p class="about-body">I usually say too much about everything. I would like to make simple statements, but I enjoy embellishment, exaggeration and variation too much to ever succeed. Instead of trying to explain the commonalities between my ceramics and prints — the way my two-dimensional work informs my three-dimensional work — I would prefer to let the associations and relationships between the ceramics and the prints be discovered by viewers through their own ingenuity and common sense.</p>
+          <p class="about-body">Perhaps it is enough to say that I work continuously on both my prints and ceramics and have constant anxieties about the way they develop on their own and the way they do or do not relate to each other. In both the 2D and 3D work, I enter the studio without any pre-conception of what is going to happen, but let my activity, process and experience be my inspiration. It is impossible for me to re-create older work and just as impossible to predict what will be happening in the studio a week from today.</p>
+          <p class="about-body">There are some constants in my work: an interest in pattern, decorative elements, multi-cultural history, the vessel, narratives, surface richness, horror vacui, invention. These ideas, rather than specific themes, unify my two- and three-dimensional work.</p>
+          <p class="about-body">My current series of prints, the <em>Imaginary Vase</em>, depicts vessels that could not be built in ceramics — forms that are too complex, too improbable, too free. Though intentionally impossible, they have the authenticity and vitality of real objects. My drawings on atlas maps overlay invented vessel forms onto real geographies, creating a conversation between place and imagination that began during a residency in France when I found an old atlas available for collage work.</p>
+          <p class="about-body" style="font-style:italic;color:#888;">— Frank Ozereko</p>
+        </div>
+      </div>
+
+      <!-- CV -->
+      <div class="about-view" id="av-cv">
+        <div class="accent-rule" style="background:#b8995a;"></div>
+        <div class="work-section-heading">CV</div>
+        <div style="margin-top:1.5rem;max-width:680px;">
+
+          <div class="cv-section">
+            <h3>Education</h3>
+            <div class="cv-row"><span class="cv-year">1974–76</span><span>MFA, New York State College of Ceramics, Alfred University, Alfred NY</span></div>
+            <div class="cv-row"><span class="cv-year">1970–73</span><span>BFA, Massachusetts College of Art, Boston MA</span></div>
+            <div class="cv-row"><span class="cv-year">1966–67</span><span>Syracuse University, Syracuse NY</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Teaching</h3>
+            <div class="cv-row"><span class="cv-year">1980–2012</span><span>Professor, Department of Art, University of Massachusetts, Amherst MA</span></div>
+            <div class="cv-row"><span class="cv-year"></span><span style="color:#aaa;">Undergraduate Director, 2005–08 · Director, Foundations Program 2001–03 · Director of Graduate Programs 1985–94, 1995–96 · Associate Professor 1989 · Tenured 1989</span></div>
+            <div class="cv-row"><span class="cv-year">1996, 98, 02</span><span>Teacher, Summer Art Program, La Napoule, France</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>Director, Summer Art Program, La Napoule, France</span></div>
+            <div class="cv-row"><span class="cv-year">1976–80</span><span>Assistant Professor, Department of Art, Auburn University, Auburn AL</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Residencies</h3>
+            <div class="cv-row"><span class="cv-year">2019</span><span>Château Orquevaux, France, Nov 1–29 (supported by Lighton International Artists' Exchange Program)</span></div>
+            <div class="cv-row"><span class="cv-year">2017</span><span>Loomis Chaffee School, Windsor CT, Jan 24–31</span></div>
+            <div class="cv-row"><span class="cv-year">2019</span><span>China residency, October</span></div>
+            <div class="cv-row"><span class="cv-year">2015, 2012</span><span>UCross Foundation, Printmaking, Clearmont WY</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Awards &amp; Professional Grants</h3>
+            <div class="cv-row"><span class="cv-year">2025</span><span>Massachusetts Cultural Council Grant for Creative Individuals, Mixed Media, $5,000</span></div>
+            <div class="cv-row"><span class="cv-year">2019</span><span>Lighton International Artists' Exchange Program (LIAEP), fully-supported award for France residency</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>Craft Fellowship, Massachusetts Cultural Council / New England Foundation for the Arts</span></div>
+            <div class="cv-row"><span class="cv-year">1986</span><span>Commission, Brockton Arts Museum, through Massachusetts Council on the Arts and Humanities</span></div>
+            <div class="cv-row"><span class="cv-year">1981</span><span>Craft Fellowship, Massachusetts Council on the Arts and Humanities</span></div>
+            <div class="cv-row"><span class="cv-year">1980</span><span>Craft Fellowship, National Endowment for the Arts</span></div>
+            <div class="cv-row"><span class="cv-year">1980</span><span>Finalist, Massachusetts Council on the Arts and Humanities</span></div>
+            <div class="cv-row"><span class="cv-year">1979</span><span>"Best in Show", Dixie Annual Drawing Competition</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Educational Grants</h3>
+            <div class="cv-row"><span class="cv-year">2007–08</span><span>Faculty Grant for Teaching, Center for Teaching, University of Massachusetts</span></div>
+            <div class="cv-row"><span class="cv-year">1995–96</span><span>Faculty Grant for Teaching, Center for Teaching, University of Massachusetts</span></div>
+            <div class="cv-row"><span class="cv-year">1985, 88</span><span>Educational Needs Fund, University of Massachusetts</span></div>
+            <div class="cv-row"><span class="cv-year">1979, 80</span><span>Faculty Grant-in-Aid, Auburn University, Auburn AL</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Publications — Reviews &amp; Features</h3>
+            <div class="cv-row"><span class="cv-year">2010</span><span>McQuaid, "On the Line: Frank and Francine Ozereko", <em>Boston Sunday Globe</em>, Feb 21, sec. N3</span></div>
+            <div class="cv-row"><span class="cv-year">2010</span><span>Holland, Laura, "Birds of Play", <em>Preview Magazine</em>, March, pp. 12–15</span></div>
+            <div class="cv-row"><span class="cv-year">2009</span><span><em>500 Tiles</em>, ed. Angelica Pozo, Lark Books (two works included)</span></div>
+            <div class="cv-row"><span class="cv-year">1998</span><span>Russell, Gloria, "Ceramic Sculpture Elevated in Form", <em>Springfield Republican</em>, Jan 25</span></div>
+            <div class="cv-row"><span class="cv-year">1996</span><span>Fina, Angela, "Frank Ozereko", <em>American Ceramics</em>, 12/1, p. 56</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>Wright, Patricia, "His Works are a Jumble Inviting Close Inspection", <em>Daily Hampshire Gazette</em>, Feb 9, pp. 33, 36</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>Temin, Christine, "Two Top-Rate Sculpture Shows Span Trends", <em>Boston Globe</em>, May 31, pp. 59, 63</span></div>
+            <div class="cv-row"><span class="cv-year">1992</span><span>Nigrosh, Leon, <em>Sculpting Clay</em>, Davis Publications, p. 115</span></div>
+            <div class="cv-row"><span class="cv-year">1991</span><span>Marasa, Vincent, "Frank Ozereko", <em>Ceramics Monthly</em>, November, pp. 12, 14</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>Wright, Patricia, "Ozereko's Work: It's a New Reach", <em>Daily Hampshire Gazette</em>, Dec 12</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>Wright, Patricia, "Ozereko's Work: It's a New Reach", <em>Daily Hampshire Gazette</em>, Dec 12</span></div>
+            <div class="cv-row"><span class="cv-year">1988</span><span>Barahal, Susan, "Sculptural Perspectives", <em>Art New England</em>, Dec/Jan, pp. 16–17</span></div>
+            <div class="cv-row"><span class="cv-year">1987</span><span>Coppola, Regina, "New England Ceramic Art", <em>Ceramics Monthly</em>, Feb, p. 41</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Zakin, Richard, <em>Ceramics: Mastering the Craft</em> (illustrated); Fina &amp; Fairbanks, <em>The Best of Pottery</em> (illustrated); Nigrosh, <em>Sculpting Clay</em>; Nimmer, <em>Art from Intuition</em></span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Publications — Authored</h3>
+            <div class="cv-row"><span class="cv-year">2010–11</span><span>"Support and Sustenance", <em>Studio Potter Magazine</em>, Vol 39 #1, pp. 11–16</span></div>
+            <div class="cv-row"><span class="cv-year">2002</span><span>"Cynthia Consentino", <em>Ceramics Monthly</em>, May, pp. 18, 20</span></div>
+            <div class="cv-row"><span class="cv-year">1992</span><span>"Originality in Crafts", <em>Ceramics Monthly</em>, summer, pp. 102–104</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>"Josh Nadel", <em>Ceramics Monthly</em>, March, pp. 80, 87</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Demonstrations &amp; Workshops</h3>
+            <div class="cv-row"><span class="cv-year">2014</span><span>Guest Artist, Frederick Community College, MD, Sept 26–27</span></div>
+            <div class="cv-row"><span class="cv-year">2013</span><span>Guest Artist, Wesleyan Potters, Middletown CT, Feb 13–14</span></div>
+            <div class="cv-row"><span class="cv-year">2011</span><span>Guest Artist, Florida Gulf Coast University, March 29</span></div>
+            <div class="cv-row"><span class="cv-year">2010</span><span>Slide Lecture, Boston Craft Show, World Trade Center, Boston MA; Fuller Craft Museum, Brockton MA</span></div>
+            <div class="cv-row"><span class="cv-year">2002</span><span>Slide Lecture, Springfield College</span></div>
+            <div class="cv-row"><span class="cv-year">1997</span><span>Slide Lecture, Alfred College of Ceramics, Alfred University NY</span></div>
+            <div class="cv-row"><span class="cv-year">1989</span><span>Guest Artist, "Raku Ho'Olaule", Honolulu HI, June 7–11</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- EXHIBITIONS -->
+      <div class="about-view" id="av-exhibitions">
+        <div class="accent-rule" style="background:#b8995a;"></div>
+        <div class="work-section-heading">Exhibitions</div>
+        <div style="margin-top:1.5rem;max-width:680px;">
+
+          <div class="cv-section">
+            <h3>Solo Exhibitions</h3>
+            <div class="cv-row"><span class="cv-year">2017</span><span>"Frank and Francine T. Ozereko: Together and Apart", Sue and Eugene Mercy Jr. Gallery, Richmond Art Center / Loomis Chaffee, Windsor CT, Jan 10 – Feb 10</span></div>
+            <div class="cv-row"><span class="cv-year">2014</span><span>"Chinoiserie", Cooley-Dickinson Hospital, Northampton MA, Dec 1–31</span></div>
+            <div class="cv-row"><span class="cv-year">2013</span><span>"Traceprints and Teapots", Widener Gallery, Austin Arts Center, Trinity College, Hartford CT, Nov 5 – Dec 9</span></div>
+            <div class="cv-row"><span class="cv-year">2012</span><span>"Trace Prints", The Sanford Gallery @ Zea Mays Printmaking, Florence MA, Sept 5 – Oct 7</span></div>
+            <div class="cv-row"><span class="cv-year">2011</span><span>"Tea-lightful", Vessels Gallery, Boston MA, Dec 2–30</span></div>
+            <div class="cv-row"><span class="cv-year">2011</span><span>"Vessels: Real and Imagined", Herter Gallery, University of Massachusetts, Amherst, Nov 9 – Dec 9</span></div>
+            <div class="cv-row"><span class="cv-year">2009</span><span>"Teapots", William Blizard Gallery, Springfield College, Springfield MA, Sept 8 – Oct 30</span></div>
+            <div class="cv-row"><span class="cv-year">2007</span><span>"Those People…" Watercolors, Open Square Gallery, Holyoke MA, Mar 22 – Apr 22</span></div>
+            <div class="cv-row"><span class="cv-year">2005</span><span>"In Xanadu", Herter Gallery, University of Massachusetts, Amherst, Feb 2 – Mar 4</span></div>
+            <div class="cv-row"><span class="cv-year">2004</span><span>"Boston Drawing Project: Featured Artist", Bernard Toale Gallery, Boston MA, Dec 1–24</span></div>
+            <div class="cv-row"><span class="cv-year">2003</span><span>"A Collection of Blue and White", Anderson–Soule Gallery, Concord NH, Nov 5–22</span></div>
+            <div class="cv-row"><span class="cv-year">2003</span><span>"Wall Pieces: A Chronology", Nada/Mason Gallery, Northfield MA, Sept 9 – Oct 19</span></div>
+            <div class="cv-row"><span class="cv-year">2002</span><span>"Chinoiserie", William Blizzard Gallery, Springfield College, Oct 7–25</span></div>
+            <div class="cv-row"><span class="cv-year">2001</span><span>"Wall Works", Vermont Clay Studio, Waterbury VT, Sept 6–30</span></div>
+            <div class="cv-row"><span class="cv-year">1997</span><span>"New Works, Sculpture", Herter Art Gallery, University of Massachusetts, Amherst MA, Nov 10 – Dec 4</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>"Little Dramas", Ferrin Gallery, Northampton MA, Jan 29 – Feb 20</span></div>
+            <div class="cv-row"><span class="cv-year">1991</span><span>"Ceramic Sculpture", Nicole C. Gallery, Boston MA, Feb 19 – Mar 28</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>"Going Vertical", Herter Gallery, UMass Amherst, Nov 30 – Dec 16</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>"Ceramic Sculpture", Sybaris Gallery, Royal Oak MI, Jan 6–31</span></div>
+            <div class="cv-row"><span class="cv-year">1986</span><span>"Interiors", Clark Gallery, Lincoln MA, Oct 7–31</span></div>
+            <div class="cv-row"><span class="cv-year">1985</span><span>"Ceramic Sculpture", Jewett Hall Gallery, University of ME, Augusta, Jan 21 – Feb 15</span></div>
+            <div class="cv-row"><span class="cv-year">1981</span><span>"Ceramic Vessels and Drawings", Lowell University, Lowell MA, Apr 6 – May 6</span></div>
+            <div class="cv-row"><span class="cv-year">1981</span><span>"New Works", Leverett Craftsmen and Artists Gallery, Leverett MA, Jun 7 – Jul 5</span></div>
+            <div class="cv-row"><span class="cv-year">1979</span><span>"Frank Ozereko", Barbara Fiedler Gallery, Washington DC, Nov 22 – Dec 23</span></div>
+            <div class="cv-row"><span class="cv-year">1978</span><span>"Drawings", East Wing Student Center Gallery, University of Delaware, Newark, Oct 16 – Nov 3</span></div>
+            <div class="cv-row"><span class="cv-year">1978</span><span>"Ceramic Vessels and Drawings", Biggin Hall Gallery, Auburn AL</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Group &amp; Invitational Exhibitions</h3>
+            <div class="cv-row"><span class="cv-year">2025</span><span>"Artistic Journey: Zea Mays Printmaking at 25 Years", University Museum of Contemporary Art, Amherst MA, Sept 12 – Dec 5</span></div>
+            <div class="cv-row"><span class="cv-year">2024</span><span>"Nature Tamed and Wild", Verdigris Gallery, Essex Village CT, Aug 2 – Sept 2</span></div>
+            <div class="cv-row"><span class="cv-year">2020</span><span>"Motley Crew", Pulp Gallery, Holyoke MA, Feb 29 – Mar 29 (ceramics, drawings, prints)</span></div>
+            <div class="cv-row"><span class="cv-year">2019</span><span>"Fertile Ground: Hilltown 6 and the Asparagus Valley Pottery Trail", Fuller Craft Museum, Brockton MA, Apr 13 – Jun 30, group exhibit, ceramics</span></div>
+            <div class="cv-row"><span class="cv-year">2019</span><span>"Asparagus Valley Pottery Trail", 15th tour of nine potters' studios, Western Massachusetts, Apr 27–28</span></div>
+            <div class="cv-row"><span class="cv-year">2019</span><span>"Second Nature", Group exhibit, Zea Mays Printmaking, Florence MA, Jan 2–30</span></div>
+            <div class="cv-row"><span class="cv-year">2018</span><span>"Open Call: NXNE 'Works on Paper'", Brattleboro Museum, Brattleboro VT, Jan 13 – Mar 10, regional competition</span></div>
+            <div class="cv-row"><span class="cv-year">2017</span><span>"Working Green", Prints from Zea Mays Printmaking, Motherbrook Arts and Community Center, Dedham MA, Oct 17 – Nov 28</span></div>
+            <div class="cv-row"><span class="cv-year">2016</span><span>"Ceramic Sculpture Invitational", Mercy Gallery, Richmond Art Center, Loomis Chaffee School, Windsor CT, Apr 26 – May 29</span></div>
+            <div class="cv-row"><span class="cv-year">2016</span><span>"Editions/Artists' Book Fair", The Tunnel, 269 11th Ave, NYC, Nov 5–8</span></div>
+            <div class="cv-row"><span class="cv-year">2015</span><span>"Editions/Artists' Book Fair", The Tunnel, 269 11th Ave, NYC, Nov 5–8</span></div>
+            <div class="cv-row"><span class="cv-year">2015</span><span>"State of Clay: Pushing the Boundaries", Fuller Museum of Craft, Brockton MA, Mar 7 – May 24</span></div>
+            <div class="cv-row"><span class="cv-year">2015</span><span>"Eclectic Traditions", The Attleboro Art Museum, Mar 24 – Apr 3</span></div>
+            <div class="cv-row"><span class="cv-year">2014</span><span>"Systems", A.P.E. Gallery, Northampton MA, Oct 7 – Nov 2</span></div>
+            <div class="cv-row"><span class="cv-year">2011</span><span>"Paperworks", Paper City Studio, Holyoke MA, May 6 – Jun 4</span></div>
+            <div class="cv-row"><span class="cv-year">2010</span><span>"On the Line" (with Francine Ozereko), 100 ft. ceramic wall installation, Fuller Craft Museum, Brockton MA, Dec 2009 – Jul 2010</span></div>
+            <div class="cv-row"><span class="cv-year">2010</span><span>"Highlights from the Permanent Collection", Fuller Craft Museum, Brockton MA, Feb 13 – Sept 26</span></div>
+            <div class="cv-row"><span class="cv-year">2010–08</span><span>Yunomi Invitational, AKAR, Iowa City IA</span></div>
+            <div class="cv-row"><span class="cv-year">2009</span><span>"From the Permanent Collection", Schein-Joseph International Museum of Ceramic Art, Alfred University, Jan 23 – Apr 17</span></div>
+            <div class="cv-row"><span class="cv-year">2009</span><span>"The Making of a Book", The President's Gallery, Massachusetts College of Art, Feb 18 – Mar 18</span></div>
+            <div class="cv-row"><span class="cv-year">2008–09</span><span>"Our Cups Runneth Over", Society of Arts and Crafts, 175 Newbury St, Boston MA</span></div>
+            <div class="cv-row"><span class="cv-year">2008</span><span>"Nowhere Else but Here", Herter Gallery, UMass Amherst, Sept 17 – Oct 31</span></div>
+            <div class="cv-row"><span class="cv-year">2007</span><span>"State of the Art", Bunker Hill Community College, Boston MA, Nov 5 – Dec 21</span></div>
+            <div class="cv-row"><span class="cv-year">2007</span><span>"Looking at the Collection", Huntsville Museum of Art, Huntsville AL, Jan 21 – Mar 4</span></div>
+            <div class="cv-row"><span class="cv-year">2007</span><span>"Works from the Permanent Collection", Fuller Craft Museum, Brockton MA, Mar 1–28</span></div>
+            <div class="cv-row"><span class="cv-year">2006</span><span>"Receptive Volumes", Schein-Joseph International Museum of Ceramic Art, Alfred University, Jun 1 – Sept 29</span></div>
+            <div class="cv-row"><span class="cv-year">2006</span><span>"Arts of the Valley Celebration", Open Square, Holyoke MA, Apr 28 – May 15</span></div>
+            <div class="cv-row"><span class="cv-year">2005</span><span>"Relative Art", Northampton Center for the Arts, Mar 1–29</span></div>
+            <div class="cv-row"><span class="cv-year">1999</span><span>"RE: Form, Contemporary Ceramics", Fuller Art Museum, Brockton MA, Dec 1998 – Feb 1999</span></div>
+            <div class="cv-row"><span class="cv-year">1998</span><span>"Fire and Form: Clay Sculpture", Springfield College, Springfield MA, Jan 20 – Feb 27</span></div>
+            <div class="cv-row"><span class="cv-year">1996</span><span>"Berkshire Clay National", Maple Hill Gallery, West Stockbridge MA, Jul 1 – Aug 31</span></div>
+            <div class="cv-row"><span class="cv-year">1996</span><span>"Faculties", University Gallery, Fine Art Center, University of Massachusetts, Amherst, Apr 13 – Jun 3</span></div>
+            <div class="cv-row"><span class="cv-year">1996</span><span>"Five College Studio Art Faculty Drawing Exhibition", Herter Gallery, UMass Amherst, Feb 5–28</span></div>
+            <div class="cv-row"><span class="cv-year">1996</span><span>"Featured Shop Artists: Frank and Francine Ozereko", The Clay Studio, Philadelphia PA, Apr 5–28</span></div>
+            <div class="cv-row"><span class="cv-year">1996</span><span>"The New Dimension", Student Union Art Gallery, UMass Amherst, Feb 6–28</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>"Fine Arts Faculty", UMass Medical Center Gallery, Worcester MA, Dec 7, 1995 – Jan 2, 1996</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>"Berkshire Clay National 1995", Maple Hill Gallery, West Stockbridge MA, Jul 1 – Aug 31</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>"Sculpture at UMass", Federal Reserve Bank of Boston Gallery, Boston MA, May 15 – Jun 25</span></div>
+            <div class="cv-row"><span class="cv-year">1993</span><span>"Then and Now", Ferrin Gallery, Northampton MA, Jun 3 – Jul 25</span></div>
+            <div class="cv-row"><span class="cv-year">1993</span><span>"Aspects of Paper", Zone Art Center, Springfield MA, Jan 24 – Mar 7</span></div>
+            <div class="cv-row"><span class="cv-year">1992</span><span>"Delayed Reaction: A Sense of Humor and Irony", Arno Maris Gallery, Westfield State College, Sept 15 – Oct 24</span></div>
+            <div class="cv-row"><span class="cv-year">1992</span><span>"2D-3D: Artwork by Multi-Dimensional Artists", Ferrin Gallery, Northampton MA, Feb 1 – Mar 6</span></div>
+            <div class="cv-row"><span class="cv-year">1992</span><span>"Potters Today: Nine Massachusetts Potters", Fitchburg Art Museum, Fitchburg MA, Feb 2 – Mar 29</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>"Frank and Francine Ozereko: Ceramic Sculpture", Hand Works Gallery, Stratton Mountain VT, Sept 1 – Oct 10</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>"Clay: Intimate Conversations", Views Gallery, Manayunk PA, Feb 23 – Mar 23</span></div>
+            <div class="cv-row"><span class="cv-year">1989</span><span>"Clay Works: Contemporary Pottery and Ceramics", Lillian Immig Gallery, Emmanuel College, Boston MA, Mar 29 – Apr 21</span></div>
+            <div class="cv-row"><span class="cv-year">1989</span><span>"3D", North Gallery, Massachusetts College of Art, Boston MA, Jan 18 – Feb 13</span></div>
+            <div class="cv-row"><span class="cv-year">1988</span><span>"Collaboration", Ferrin Gallery, Northampton MA, Jun 1–30</span></div>
+            <div class="cv-row"><span class="cv-year">1988</span><span>"Art and Religion", Huntingdon College of Art Gallery, Montgomery AL, Feb 1–15</span></div>
+            <div class="cv-row"><span class="cv-year">1988–89</span><span>"Permanent Collection Exhibit", Brockton Art Museum, Fuller Memorial, Brockton MA</span></div>
+            <div class="cv-row"><span class="cv-year">1987</span><span>"Assemblage/Collage", Arno Maris Gallery, Westfield State College, Westfield MA, Sept 25 – Oct 31</span></div>
+            <div class="cv-row"><span class="cv-year">1987</span><span>"Chicago International New Art Forms Exposition", Navy Pier, Chicago IL, Sept 18–21</span></div>
+            <div class="cv-row"><span class="cv-year">1987–89</span><span>Touring: Lamont Gallery, Phillips Exeter Academy / Berkshire Artisans, Pittsfield MA / Donang Gallery, Seoul Institute of the Arts, Korea / Nesto Gallery, Milton Academy / Herter Gallery, UMass Amherst</span></div>
+            <div class="cv-row"><span class="cv-year">1986</span><span>"Colleagues in Clay II", Skera Gallery, Northampton MA, Jun 1–30</span></div>
+            <div class="cv-row"><span class="cv-year">1985</span><span>"Contemporary Ceramics: Six New England Artists", Fine Arts Center Gallery, UMass Amherst, Mar 6 – Jun 9</span></div>
+            <div class="cv-row"><span class="cv-year">1983</span><span>"39th Scripps College Annual", Lang Art Gallery, Claremont CA, Mar 6 – Apr 1</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Competitions</h3>
+            <div class="cv-row"><span class="cv-year">2010</span><span>"4th International Small Teapot Show", Saddleback College, Mission Viejo CA, Feb 11 – Mar 11</span></div>
+            <div class="cv-row"><span class="cv-year">2008</span><span>"Third International Small Teapot Show", Saddleback College, Mission Viejo CA, Feb 25 – Mar 27</span></div>
+            <div class="cv-row"><span class="cv-year">2007</span><span>"Forms and Shapes: Inspired by Architecture", AKAR Gallery, Iowa City IA, Aug 17–31</span></div>
+            <div class="cv-row"><span class="cv-year">2002</span><span>"Wall Works", Baltimore Clay Works, Baltimore MD, Jan 11 – Feb 17</span></div>
+            <div class="cv-row"><span class="cv-year">1992</span><span>"Stories: Narrative Art in Contemporary Crafts", Luckenbach Mill Gallery, Bethlehem PA, Aug 8 – Sept 20</span></div>
+            <div class="cv-row"><span class="cv-year">1991</span><span>"Figurative Clay", Georgia State University Art Gallery, Atlanta GA, Apr 5–25</span></div>
+            <div class="cv-row"><span class="cv-year">1987</span><span>"American Ceramics Now: 27th Ceramic National Exhibition", Everson Museum, Syracuse NY, Apr 8 – Jun 28 (touring nationally through Nov 1989)</span></div>
+            <div class="cv-row"><span class="cv-year">1985</span><span>"3-Dimensions", Fox Fine Arts Center, University of Texas at El Paso, Nov 9, 1984 – Jan 11, 1985</span></div>
+            <div class="cv-row"><span class="cv-year">1984</span><span>"Currents '84", Middle Tennessee State University, Murfreesboro TN, Mar 5 – Apr 6</span></div>
+            <div class="cv-row"><span class="cv-year">1983</span><span>"NCECA Juried Members' Show", Nexus Gallery, Atlanta GA (touring nationally Sept 1982 – Mar 1983)</span></div>
+            <div class="cv-row"><span class="cv-year">1981</span><span>"Vessels Aesthetic", Taft College Gallery, CA (touring)</span></div>
+            <div class="cv-row"><span class="cv-year">1980</span><span>"Vermilion '80", University of South Dakota, Vermilion SD, Oct 10–30 (touring)</span></div>
+            <div class="cv-row"><span class="cv-year">1980</span><span>"Appalachian National Drawing Competition", Appalachian State University, Boone NC, Mar 3–31</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Regional</h3>
+            <div class="cv-row"><span class="cv-year">2009</span><span>"The State of Clay", 6th Biennial Show of Massachusetts Clay Artists, Lexington Arts and Crafts Society, Mar 31 – Apr 25</span></div>
+            <div class="cv-row"><span class="cv-year">1988</span><span>"Art in Craft Media", Newton Arts Center Gallery, Nortonville MA, Mar 15 – Apr 12</span></div>
+            <div class="cv-row"><span class="cv-year">1986</span><span>"Survey: 8", Zone Art Center, Springfield MA, Mar 15 – Apr 12</span></div>
+            <div class="cv-row"><span class="cv-year">1986</span><span>"Group Exhibition", Zone Art Center, Springfield MA, Feb 26 – Apr 12</span></div>
+            <div class="cv-row"><span class="cv-year">1980</span><span>"Making it New: Crafts by New England Artists", University Art Galleries, University of NH, Durham, Mar 22 – Apr 28</span></div>
+            <div class="cv-row"><span class="cv-year">1980</span><span>"Memphis Paper and Clay", Memphis School of Art, Memphis TN, Feb 25 – Mar 28</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PUBLIC COLLECTIONS -->
+      <div class="about-view" id="av-public">
+        <div class="accent-rule" style="background:#b8995a;"></div>
+        <div class="work-section-heading">Public collections</div>
+        <div style="margin-top:1.5rem;max-width:620px;">
+
+          <div class="cv-section">
+            <h3>Museum Collections</h3>
+            <div class="cv-row"><span class="cv-year">—</span><span>China Yixing Ceramic Museum, Yixing, China</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Brockton Art Museum, Brockton MA</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Mint Museum of Art, Charlotte NC</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Montgomery Museum of Fine Art, Montgomery AL</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Anniston Museum of Natural History, Anniston AL</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Museum of Ceramic Art, Gloryhole Collection, Alfred University, Alfred NY</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Schein-Joseph International Museum of Ceramic Art, Alfred University, Alfred NY</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>University Collections</h3>
+            <div class="cv-row"><span class="cv-year">—</span><span>Lee Hall Gallery, Clemson University, Clemson SC</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>University of Georgia Art Gallery, Athens GA</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Alabama Crafts Council Permanent Collection</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Georgia State University, Atlanta GA</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Print Collections</h3>
+            <div class="cv-row"><span class="cv-year">—</span><span>Portfolio, <em>Traces</em>, created at Zea Mays Printmaking</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>The New York Public Library</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Hampshire College Special Collections</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Wheaton College Special Collections</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Drawing Collections</h3>
+            <div class="cv-row"><span class="cv-year">—</span><span>The Drawing Center, 35 Wooster Street, New York NY</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>The Boston Drawing Project, Bernard Toale Gallery, Boston MA</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>International Drawing Institute, Traveling Postcard Exhibit, College of Fine Arts, University of NSW, Australia</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Corporate Collections</h3>
+            <div class="cv-row"><span class="cv-year">—</span><span>Meditech (Medical Information Technology Inc.), Boston MA</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>McDonald's Headquarters</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>The Davis Companies, Boston MA</span></div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Notable Private Collections</h3>
+            <div class="cv-row"><span class="cv-year">—</span><span>Sonny and Gloria Kamm Teapot Collection</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Daniel Jacobs Collection</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Meredith Moses Collection</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Anne Davis Collection</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PRESS -->
+      <div class="about-view" id="av-press">
+        <div class="accent-rule" style="background:#b8995a;"></div>
+        <div class="work-section-heading">Press</div>
+        <div style="margin-top:1.5rem;max-width:660px;">
+          <div class="cv-section">
+            <h3>Reviews &amp; Features</h3>
+            <div class="cv-row"><span class="cv-year">2010</span><span>McQuaid, "On the Line: Frank and Francine Ozereko", <em>Boston Sunday Globe</em>, Feb 21, sec. N3</span></div>
+            <div class="cv-row"><span class="cv-year">2010</span><span>Holland, Laura, "Birds of Play", <em>Preview Magazine</em>, March, pp. 12–15</span></div>
+            <div class="cv-row"><span class="cv-year">1998</span><span>Russell, Gloria, "Ceramic Sculpture Elevated in Form", <em>Springfield Republican</em>, Jan 25</span></div>
+            <div class="cv-row"><span class="cv-year">1996</span><span>Fina, Angela, "Frank Ozereko", <em>American Ceramics</em>, 12/1, p. 56</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>Wright, Patricia, "His Works are a Jumble Inviting Close Inspection", <em>Daily Hampshire Gazette</em>, Feb 9, pp. 33, 36</span></div>
+            <div class="cv-row"><span class="cv-year">1995</span><span>Temin, Christine, "Two Top-Rate Sculpture Shows Span Trends", <em>Boston Globe</em>, May 31, pp. 59, 63</span></div>
+            <div class="cv-row"><span class="cv-year">1991</span><span>Marasa, Vincent, "Frank Ozereko", <em>Ceramics Monthly</em>, November, pp. 12, 14</span></div>
+            <div class="cv-row"><span class="cv-year">1990</span><span>Wright, Patricia, "Ozereko's Work: It's a New Reach", <em>Daily Hampshire Gazette</em>, Dec 12</span></div>
+            <div class="cv-row"><span class="cv-year">1988</span><span>Barahal, Susan, "Sculptural Perspectives", <em>Art New England</em>, Dec/Jan, pp. 16–17</span></div>
+            <div class="cv-row"><span class="cv-year">1987</span><span>Coppola, Regina, "New England Ceramic Art", <em>Ceramics Monthly</em>, Feb, p. 41</span></div>
+          </div>
+          <div class="cv-section">
+            <h3>Books</h3>
+            <div class="cv-row"><span class="cv-year">2009</span><span><em>500 Tiles</em>, ed. Angelica Pozo, Lark Books (two works included)</span></div>
+            <div class="cv-row"><span class="cv-year">1992</span><span>Nigrosh, Leon, <em>Sculpting Clay</em>, Davis Publications, Worcester MA, p. 115</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Zakin, Richard, <em>Ceramics: Mastering the Craft</em> (illustrated)</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Fina &amp; Fairbanks, <em>The Best of Pottery</em> (illustrated)</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Nimmer, Dean, <em>Art from Intuition</em> (illustrated)</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <div class="inner-page">
+    <div class="accent-rule" style="background:#8898aa;"></div>
+    <h1 class="page-heading">Contact</h1>
+    <p class="contact-intro">For studio visits, commissions, or general inquiries, get in touch.</p>
+    <div class="contact-grid">
+      <div class="cl">Contact</div>
+      <div class="cd">
+        <p>Western Massachusetts</p>
+        <a href="#">studio@frankozereko.com</a>
+        <a href="https://www.instagram.com/fozereko" target="_blank">Instagram</a>
+        <a href="#">Shop on Etsy</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-name">Frank Ozereko</div>
+  <div class="footer-bottom">
+    <a href="https://www.instagram.com/fozereko" target="_blank" style="display:inline-flex;opacity:0.4;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.4">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="#e8e4dc" stroke="none"/>
+      </svg>
+    </a>
+  </div>
+  <div style="display:flex;justify-content:center;align-items:center;gap:.75rem;padding-bottom:2rem;font-size:11px;font-family:'Rubik',sans-serif;font-weight:300;color:rgba(232,228,220,.5);letter-spacing:.04em;">
+    <a href="mailto:studio@frankozereko.com" style="color:rgba(232,228,220,.5);text-decoration:none;">studio@frankozereko.com</a>
+    <span style="opacity:.5;">·</span>
+    <span>Western Massachusetts</span>
+    <span style="opacity:.5;">·</span>
+    <span>© 2025 Frank Ozereko</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lb-close">✕</button>
+  <img id="lb-img" src="" style="max-height:80vh;max-width:88vw;object-fit:contain;display:none;"/>
+  <div style="margin-top:1rem;text-align:center;">
+    <div id="lb-title" style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#fff;"></div>
+    <div id="lb-meta" style="font-size:11px;opacity:.5;margin-top:5px;font-family:'Rubik',sans-serif;font-style:italic;color:#fff;"></div>
+  </div>
+</div>
+
+<script src="js/gallery-data.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
