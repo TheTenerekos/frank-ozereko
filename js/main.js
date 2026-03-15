@@ -50,7 +50,6 @@ function buildView(id,section,cat){
   buildRows(items,v.querySelector('.gb'));
 }
 
-// Show a category; on mobile auto-collapse the nav after selection
 function showCat(section,cat,btn){
   document.querySelectorAll('.content-view').forEach(v=>v.classList.remove('active'));
   const id=section+'-'+cat;
@@ -59,7 +58,6 @@ function showCat(section,cat,btn){
   else document.getElementById('cv-'+id).classList.add('active');
   document.querySelectorAll('#lcats-'+section+' .leftnav-cat').forEach(c=>c.classList.remove('active'));
   if(btn)btn.classList.add('active');
-  if(window.innerWidth<=768)closeWorkNav();
 }
 
 function openOnly(s){
@@ -104,30 +102,74 @@ function closeLb(){document.getElementById('lightbox').classList.remove('open');
 
 function closeMobileMenu(){
   document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawer-backdrop').classList.remove('open');
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
 
-  // Hamburger toggle
+  // Hamburger — open drawer
   document.getElementById('hamburger').addEventListener('click',()=>{
     document.getElementById('hamburger').classList.toggle('open');
-    document.getElementById('mobile-menu').classList.toggle('open');
+    document.getElementById('drawer').classList.toggle('open');
+    document.getElementById('drawer-backdrop').classList.toggle('open');
   });
 
-  // Mobile menu items
-  document.getElementById('mob-work-btn').addEventListener('click',()=>{
-    showPage('work');
-    // Load Prints > All so page isn't blank, but keep nav collapsed on mobile
-    showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));
-    closeWorkNav();
-    closeMobileMenu();
+  // Close drawer
+  document.getElementById('drawer-close').addEventListener('click',closeMobileMenu);
+  document.getElementById('drawer-backdrop').addEventListener('click',closeMobileMenu);
+
+  // Work heading toggle in drawer
+  document.getElementById('mob-work-heading').addEventListener('click',()=>{
+    const h=document.getElementById('mob-work-heading');
+    const s=document.getElementById('mob-work-sub');
+    document.getElementById('mob-about-heading').classList.remove('open');
+    document.getElementById('mob-about-sub').classList.remove('open');
+    h.classList.toggle('open');
+    s.classList.toggle('open');
   });
-  document.getElementById('mob-about-btn').addEventListener('click',()=>{
-    showPage('about');closeMobileMenu();
+
+  // About heading toggle in drawer
+  document.getElementById('mob-about-heading').addEventListener('click',()=>{
+    const h=document.getElementById('mob-about-heading');
+    const s=document.getElementById('mob-about-sub');
+    document.getElementById('mob-work-heading').classList.remove('open');
+    document.getElementById('mob-work-sub').classList.remove('open');
+    h.classList.toggle('open');
+    s.classList.toggle('open');
   });
+
+  // Work sub-items
+  document.querySelectorAll('.drawer-sub-item[data-section]').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const section=el.dataset.section;
+      const cat=el.dataset.cat;
+      showPage('work');
+      openOnly(section);
+      const btn=document.querySelector('#lcats-'+section+' .leftnav-cat');
+      showCat(section,cat,btn);
+      document.querySelectorAll('.drawer-sub-item[data-section]').forEach(i=>i.classList.remove('active'));
+      el.classList.add('active');
+      closeMobileMenu();
+    });
+  });
+
+  // About sub-items
+  document.querySelectorAll('.drawer-sub-item[data-about]').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const id=el.dataset.about;
+      showPage('about');
+      showAbout(id,document.querySelector('#lcats-about .leftnav-cat'));
+      document.querySelectorAll('.drawer-sub-item[data-about]').forEach(i=>i.classList.remove('active'));
+      el.classList.add('active');
+      closeMobileMenu();
+    });
+  });
+
+  // Contact in drawer
   document.getElementById('mob-contact-btn').addEventListener('click',()=>{
-    showPage('contact');closeMobileMenu();
+    showPage('contact');
+    closeMobileMenu();
   });
 
   // Desktop nav
@@ -139,7 +181,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('about-btn').addEventListener('click',()=>showPage('about'));
   document.getElementById('contact-btn').addEventListener('click',()=>showPage('contact'));
 
-  // Work left nav — toggle sections
+  // Desktop work left nav
   document.getElementById('lnav-prints').addEventListener('click',()=>toggleNav('prints'));
   document.getElementById('lnav-ceramics').addEventListener('click',()=>toggleNav('ceramics'));
   document.getElementById('lnav-drawings').addEventListener('click',()=>toggleNav('drawings'));
