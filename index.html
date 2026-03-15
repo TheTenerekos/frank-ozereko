@@ -22,11 +22,63 @@
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <div class="mob-item" id="mob-work-btn">Work</div>
-    <div class="mob-item" id="mob-about-btn">About</div>
-    <div class="mob-item" id="mob-contact-btn">Contact</div>
-  </div>
+</div>
+
+<!-- MOBILE DRAWER -->
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drawer-close">✕</button>
+  <nav class="drawer-nav">
+
+    <!-- Work -->
+    <div class="drawer-section">
+      <div class="drawer-heading" id="mob-work-heading">
+        <span>Work</span><span class="drawer-arrow">+</span>
+      </div>
+      <div class="drawer-sub" id="mob-work-sub">
+        <div class="drawer-sub-group">
+          <div class="drawer-sub-label">Prints</div>
+          <div class="drawer-sub-item" data-section="prints" data-cat="all">All</div>
+          <div class="drawer-sub-item" data-section="prints" data-cat="assemblies">Assemblies</div>
+          <div class="drawer-sub-item" data-section="prints" data-cat="portraits">Portraits</div>
+          <div class="drawer-sub-item" data-section="prints" data-cat="duos">Duos</div>
+          <div class="drawer-sub-item" data-section="prints" data-cat="trios">Trios</div>
+          <div class="drawer-sub-item" data-section="prints" data-cat="stilllives">Still lifes</div>
+          <div class="drawer-sub-item" data-section="prints" data-cat="abstract">Abstract</div>
+        </div>
+        <div class="drawer-sub-group">
+          <div class="drawer-sub-label">Ceramics</div>
+          <div class="drawer-sub-item" data-section="ceramics" data-cat="all">All</div>
+        </div>
+        <div class="drawer-sub-group">
+          <div class="drawer-sub-label">Drawings</div>
+          <div class="drawer-sub-item" data-section="drawings" data-cat="all">All</div>
+          <div class="drawer-sub-item" data-section="drawings" data-cat="maps">Maps</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="drawer-section">
+      <div class="drawer-heading" id="mob-about-heading">
+        <span>About</span><span class="drawer-arrow">+</span>
+      </div>
+      <div class="drawer-sub" id="mob-about-sub">
+        <div class="drawer-sub-item" data-about="biography">Biography</div>
+        <div class="drawer-sub-item" data-about="statement">Statement</div>
+        <div class="drawer-sub-item" data-about="cv">CV</div>
+        <div class="drawer-sub-item" data-about="exhibitions">Exhibitions</div>
+        <div class="drawer-sub-item" data-about="public">Public collections</div>
+        <div class="drawer-sub-item" data-about="press">Press</div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="drawer-heading drawer-heading-plain" id="mob-contact-btn">
+      <span>Contact</span>
+    </div>
+
+  </nav>
 </div>
 
 <!-- HOME -->
@@ -204,7 +256,7 @@
             <div class="cv-row"><span class="cv-year">1990</span><span>Wright, Patricia, "Ozereko's Work: It's a New Reach", <em>Daily Hampshire Gazette</em>, Dec 12</span></div>
             <div class="cv-row"><span class="cv-year">1988</span><span>Barahal, Susan, "Sculptural Perspectives", <em>Art New England</em>, Dec/Jan, pp. 16–17</span></div>
             <div class="cv-row"><span class="cv-year">1987</span><span>Coppola, Regina, "New England Ceramic Art", <em>Ceramics Monthly</em>, Feb, p. 41</span></div>
-            <div class="cv-row"><span class="cv-year">1990</span><span>Zakin, Richard, <em>Ceramics: Mastering the Craft</em> (illustrated); Fina &amp; Fairbanks, <em>The Best of Pottery</em> (illustrated); Nigrosh, <em>Sculpting Clay</em>; Nimmer, <em>Art from Intuition</em></span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Zakin, Richard, <em>Ceramics: Mastering the Craft</em> (illustrated); Fina &amp; Fairbanks, <em>The Best of Pottery</em> (illustrated); Nigrosh, <em>Sculpting Clay</em>; Nimmer, <em>Art from Intuition</em></span></div>
           </div>
 
           <div class="cv-section">
@@ -434,10 +486,10 @@
           <div class="cv-section">
             <h3>Books</h3>
             <div class="cv-row"><span class="cv-year">2009</span><span><em>500 Tiles</em>, ed. Angelica Pozo, Lark Books (two works included)</span></div>
-            <div class="cv-row"><span class="cv-year">2008</span><span>Nimmer, Dean, <em>Art from Intuition</em> (illustrated)</span></div>
-            <div class="cv-row"><span class="cv-year">1996</span><span>Fina &amp; Fairbanks, <em>The Best of Pottery</em> (illustrated)</span></div>
             <div class="cv-row"><span class="cv-year">1992</span><span>Nigrosh, Leon, <em>Sculpting Clay</em>, Davis Publications, Worcester MA, p. 115</span></div>
-            <div class="cv-row"><span class="cv-year">1990</span><span>Zakin, Richard, <em>Ceramics: Mastering the Craft</em> (illustrated)</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Zakin, Richard, <em>Ceramics: Mastering the Craft</em> (illustrated)</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Fina &amp; Fairbanks, <em>The Best of Pottery</em> (illustrated)</span></div>
+            <div class="cv-row"><span class="cv-year">—</span><span>Nimmer, Dean, <em>Art from Intuition</em> (illustrated)</span></div>
           </div>
         </div>
       </div>
@@ -456,8 +508,9 @@
       <div class="cl">Contact</div>
       <div class="cd">
         <p>Western Massachusetts</p>
-        <a href="mailto:your@email.com">hello@frankozereko.com</a>
+        <a href="#"><span class="__cf_email__" data-cfemail="a2d1d6d7c6cbcde2c4d0c3ccc9cdd8c7d0c7c9cd8cc1cdcf">[email&#160;protected]</span></a>
         <a href="https://www.instagram.com/fozereko" target="_blank">Instagram</a>
+        <a href="#">Shop on Etsy</a>
       </div>
     </div>
   </div>
@@ -475,6 +528,8 @@
     </a>
   </div>
   <div style="display:flex;justify-content:center;align-items:center;gap:.75rem;padding-bottom:2rem;font-size:11px;font-family:'Rubik',sans-serif;font-weight:300;color:rgba(232,228,220,.5);letter-spacing:.04em;">
+    <a href="/cdn-cgi/l/email-protection#53202726373a3c133521323d383c29362136383c7d303c3e"><span class="__cf_email__" data-cfemail="0b787f7e6f62644b6d796a656064716e796e606425686466">[email&#160;protected]</span></a>
+    <span style="opacity:.5;">·</span>
     <span>Western Massachusetts</span>
     <span style="opacity:.5;">·</span>
     <span>© 2025 Frank Ozereko</span>
