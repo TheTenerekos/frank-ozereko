@@ -22,13 +22,16 @@ body{font-family:'Rubik',sans-serif;background:#f5f2ec;color:#111;min-height:100
 
 /* ── HOME EDITORIAL ── */
 /* ── CREDENTIAL BAND ── */
-.cred-band{background:#4a5240;padding:3rem 5rem;margin-top:2rem;}
+.cred-band{background:#4a4f55;padding:3rem 5rem;margin-top:2rem;}
 .cred-inner{max-width:900px;margin:0 auto;}
-.cred-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.5);font-family:'Rubik',sans-serif;font-weight:400;margin-bottom:1.5rem;}
+.cred-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;}
+.cred-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.5);font-family:'Rubik',sans-serif;font-weight:400;}
+.cred-cv-btn{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:'Rubik',sans-serif;font-weight:400;color:rgba(232,228,220,.7);border:.5px solid rgba(232,228,220,.3);padding:.5rem 1rem;cursor:pointer;background:none;transition:all .2s;}
+.cred-cv-btn:hover{color:#fff;border-color:rgba(232,228,220,.7);}
 .cred-pills{display:flex;flex-wrap:wrap;gap:.75rem;}
 .cred-pill{display:inline-flex;flex-direction:column;gap:.25rem;background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);padding:.6rem 1rem;cursor:default;}
 .cred-pill-tag{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,228,220,.4);font-family:'Rubik',sans-serif;font-weight:400;}
-.cred-pill span:last-child,.cred-pill > *:not(.cred-pill-tag){font-size:12px;font-family:'Rubik',sans-serif;font-weight:300;color:rgba(232,228,220,.85);}
+.cred-pill-name{font-size:12px;font-family:'Rubik',sans-serif;font-weight:300;color:rgba(232,228,220,.85);}
 
 .home-editorial{display:grid;grid-template-columns:5fr 7fr;gap:0;padding:3rem 5rem 3rem;align-items:center;max-width:900px;margin:0 auto;}
 .home-editorial-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;display:block;}
