@@ -36,7 +36,17 @@ const GD = {
   },
 
   ceramics: {
-    all: [],  // Add images to images/ceramics/ and list here
+    vases: [
+      { s: 'images/ceramics/vase_01.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_02.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_03.jpg', t: 'vase', m: 'Ceramic, 2025', r: '4/3' },
+      { s: 'images/ceramics/vase_04.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_05.jpg', t: 'vase', m: 'Ceramic, 2025', r: '4/3' },
+      { s: 'images/ceramics/vase_06.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_07.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_08.jpg', t: 'vase', m: 'Ceramic, 2025', r: '4/3' },
+      { s: 'images/ceramics/vase_09.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
+    ], 
   },
 
   drawings: {
