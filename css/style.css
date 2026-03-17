@@ -22,11 +22,13 @@ body{font-family:'Rubik',sans-serif;background:#f5f2ec;color:#111;min-height:100
 
 /* ── HOME EDITORIAL ── */
 /* ── CREDENTIAL BAND ── */
-.cred-band{background:#2e2c28;padding:3rem 5rem;margin-top:2rem;}
-.cred-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2rem;max-width:900px;margin:0 auto;}
-.cred-col{}
-.cred-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#c8b870;font-family:'Rubik',sans-serif;font-weight:400;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:.5px solid rgba(255,255,255,.1);}
-.cred-item{font-size:12px;font-family:'Rubik',sans-serif;font-weight:300;color:rgba(232,228,220,.7);line-height:1;margin-bottom:.5rem;}
+.cred-band{background:#4a5240;padding:3rem 5rem;margin-top:2rem;}
+.cred-inner{max-width:900px;margin:0 auto;}
+.cred-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.5);font-family:'Rubik',sans-serif;font-weight:400;margin-bottom:1.5rem;}
+.cred-pills{display:flex;flex-wrap:wrap;gap:.75rem;}
+.cred-pill{display:inline-flex;flex-direction:column;gap:.25rem;background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);padding:.6rem 1rem;cursor:default;}
+.cred-pill-tag{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,228,220,.4);font-family:'Rubik',sans-serif;font-weight:400;}
+.cred-pill span:last-child,.cred-pill > *:not(.cred-pill-tag){font-size:12px;font-family:'Rubik',sans-serif;font-weight:300;color:rgba(232,228,220,.85);}
 
 .home-editorial{display:grid;grid-template-columns:5fr 7fr;gap:0;padding:3rem 5rem 3rem;align-items:center;max-width:900px;margin:0 auto;}
 .home-editorial-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;display:block;}
@@ -172,7 +174,6 @@ footer{background:#2e2c28;margin-top:auto;overflow:hidden;}
   .nav-name{font-size:20px;}
   .home-grid{grid-template-columns:1fr 1fr;padding:2rem 1.5rem 0;gap:.75rem;max-width:100%;}
   .cred-band{padding:2rem 1.5rem;}
-  .cred-grid{grid-template-columns:1fr 1fr;gap:1.5rem;}
   .home-editorial{grid-template-columns:1fr;padding:2rem 1.5rem;}
   .home-editorial-text{padding:1.5rem 0 0;}
   .home-blurb-text{font-size:18px;}
