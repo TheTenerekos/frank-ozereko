@@ -21,6 +21,13 @@ body{font-family:'Rubik',sans-serif;background:#f5f2ec;color:#111;min-height:100
 .home-grid-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
 
 /* ── HOME EDITORIAL ── */
+/* ── CREDENTIAL BAND ── */
+.cred-band{background:#2e2c28;padding:3rem 5rem;margin-top:2rem;}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2rem;max-width:900px;margin:0 auto;}
+.cred-col{}
+.cred-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#c8b870;font-family:'Rubik',sans-serif;font-weight:400;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:.5px solid rgba(255,255,255,.1);}
+.cred-item{font-size:12px;font-family:'Rubik',sans-serif;font-weight:300;color:rgba(232,228,220,.7);line-height:1;margin-bottom:.5rem;}
+
 .home-editorial{display:grid;grid-template-columns:5fr 7fr;gap:0;padding:3rem 5rem 3rem;align-items:center;max-width:900px;margin:0 auto;}
 .home-editorial-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;display:block;}
 .home-editorial-text{padding:0 3rem;}
@@ -164,6 +171,8 @@ footer{background:#2e2c28;margin-top:auto;overflow:hidden;}
   .nav-top{padding:1.25rem 1.5rem;}
   .nav-name{font-size:20px;}
   .home-grid{grid-template-columns:1fr 1fr;padding:2rem 1.5rem 0;gap:.75rem;max-width:100%;}
+  .cred-band{padding:2rem 1.5rem;}
+  .cred-grid{grid-template-columns:1fr 1fr;gap:1.5rem;}
   .home-editorial{grid-template-columns:1fr;padding:2rem 1.5rem;}
   .home-editorial-text{padding:1.5rem 0 0;}
   .home-blurb-text{font-size:18px;}
