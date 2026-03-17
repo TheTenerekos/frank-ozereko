@@ -1,9 +1,3 @@
-// ─────────────────────────────────────────────────────────────
-// GALLERY DATA — edit this file to add/update artwork
-// Each entry: { s, t, m, r }
-// r: '3/4' for portrait orientation, '4/3' for landscape
-// ─────────────────────────────────────────────────────────────
-
 const GD = {
 
   prints: {
@@ -30,23 +24,23 @@ const GD = {
       { s: 'images/prints/trios_03.jpg', t: 'Trio — Blue & Black', m: 'Woodblock monoprint, 2024', r: '4/3' },
       { s: 'images/prints/trios_04.jpg', t: 'Trio — Green Ground', m: 'Woodblock monoprint, 2024', r: '4/3' },
     ],
-    assemblies: [],  // Add images to images/prints/ and list here
-    stilllives: [],  // Add images to images/prints/ and list here
-    abstract: [],    // Add images to images/prints/ and list here
+    assemblies: [],
+    stilllives: [],
+    abstract: [],
   },
 
   ceramics: {
-    vases: [
-      { s: 'images/ceramics/vase_01.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
-      { s: 'images/ceramics/vase_02.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
-      { s: 'images/ceramics/vase_03.jpg', t: 'vase', m: 'Ceramic, 2025', r: '4/3' },
-      { s: 'images/ceramics/vase_04.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
-      { s: 'images/ceramics/vase_05.jpg', t: 'vase', m: 'Ceramic, 2025', r: '4/3' },
-      { s: 'images/ceramics/vase_06.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
-      { s: 'images/ceramics/vase_07.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
-      { s: 'images/ceramics/vase_08.jpg', t: 'vase', m: 'Ceramic, 2025', r: '4/3' },
-      { s: 'images/ceramics/vase_09.jpg', t: 'vase', m: 'Ceramic, 2025', r: '3/4' },
-    ], 
+    all: [
+      { s: 'images/ceramics/vase_01.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_02.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_03.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '4/3' },
+      { s: 'images/ceramics/vase_04.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_05.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '4/3' },
+      { s: 'images/ceramics/vase_06.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_07.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_08.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '4/3' },
+      { s: 'images/ceramics/vase_09.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+    ],
   },
 
   drawings: {
