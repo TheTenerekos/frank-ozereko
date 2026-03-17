@@ -1,3 +1,4 @@
+// ── Gallery item builder ──────────────────────────────────────
 function gi(item){
   const d=document.createElement('div');
   d.className='gi';
@@ -11,6 +12,7 @@ function gi(item){
   return d;
 }
 
+// ── Build gallery rows ────────────────────────────────────────
 function buildRows(items,container){
   container.innerHTML='';
   if(!items||!items.length){container.innerHTML='<p style="color:#aaa;font-family:Rubik,sans-serif;font-size:13px;font-style:italic;">No images yet</p>';return;}
@@ -36,6 +38,7 @@ function buildRows(items,container){
   }
 }
 
+// ── Build a work content view ─────────────────────────────────
 function buildView(id,section,cat){
   const area=document.getElementById('work-area');
   const v=document.createElement('div');
@@ -50,6 +53,7 @@ function buildView(id,section,cat){
   buildRows(items,v.querySelector('.gb'));
 }
 
+// ── Show a work category ──────────────────────────────────────
 function showCat(section,cat,btn){
   document.querySelectorAll('.content-view').forEach(v=>v.classList.remove('active'));
   const id=section+'-'+cat;
@@ -58,8 +62,11 @@ function showCat(section,cat,btn){
   else document.getElementById('cv-'+id).classList.add('active');
   document.querySelectorAll('#lcats-'+section+' .leftnav-cat').forEach(c=>c.classList.remove('active'));
   if(btn)btn.classList.add('active');
+  // store current items for lightbox navigation
+  lbItems=cat==='all'?Object.values(GD[section]).flat():GD[section][cat]||[];
 }
 
+// ── Left nav helpers ──────────────────────────────────────────
 function openOnly(s){
   ['prints','ceramics','drawings'].forEach(x=>{
     document.getElementById('lcats-'+x).classList.toggle('open',x===s);
@@ -77,6 +84,7 @@ function closeWorkNav(){
   });
 }
 
+// ── About sub-nav ─────────────────────────────────────────────
 function showAbout(id,btn){
   document.querySelectorAll('.about-view').forEach(v=>v.classList.remove('active'));
   document.getElementById('av-'+id).classList.add('active');
@@ -84,6 +92,7 @@ function showAbout(id,btn){
   if(btn)btn.classList.add('active');
 }
 
+// ── Page switching ────────────────────────────────────────────
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -92,23 +101,43 @@ function showPage(id){
   window.scrollTo(0,0);
 }
 
+// ── Lightbox with prev/next ───────────────────────────────────
+let lbItems=[];
+let lbIndex=0;
+
 function lb(t,m,s){
-  document.getElementById('lb-title').textContent=t;
-  document.getElementById('lb-meta').textContent=m;
-  const i=document.getElementById('lb-img');i.src=s;i.style.display=s?'block':'none';
+  // find index in current items
+  const idx=lbItems.findIndex(item=>item.s===s);
+  lbIndex=idx>=0?idx:0;
+  lbShow();
   document.getElementById('lightbox').classList.add('open');
 }
+
+function lbShow(){
+  const item=lbItems[lbIndex];
+  if(!item)return;
+  document.getElementById('lb-title').textContent=item.t;
+  document.getElementById('lb-meta').textContent=item.m;
+  const img=document.getElementById('lb-img');
+  img.src=item.s;img.style.display='block';
+  // show/hide arrows
+  document.getElementById('lb-prev').classList.toggle('hidden',lbIndex===0);
+  document.getElementById('lb-next').classList.toggle('hidden',lbIndex===lbItems.length-1);
+}
+
 function closeLb(){document.getElementById('lightbox').classList.remove('open');}
 
+// ── Mobile drawer helpers ─────────────────────────────────────
 function closeMobileMenu(){
   document.getElementById('hamburger').classList.remove('open');
   document.getElementById('drawer').classList.remove('open');
   document.getElementById('drawer-backdrop').classList.remove('open');
 }
 
+// ── Init ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded',()=>{
 
-  // Hamburger — open drawer
+  // Hamburger
   document.getElementById('hamburger').addEventListener('click',()=>{
     document.getElementById('hamburger').classList.toggle('open');
     document.getElementById('drawer').classList.toggle('open');
@@ -125,8 +154,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const s=document.getElementById('mob-work-sub');
     document.getElementById('mob-about-heading').classList.remove('open');
     document.getElementById('mob-about-sub').classList.remove('open');
-    h.classList.toggle('open');
-    s.classList.toggle('open');
+    h.classList.toggle('open');s.classList.toggle('open');
   });
 
   // About heading toggle in drawer
@@ -135,11 +163,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     const s=document.getElementById('mob-about-sub');
     document.getElementById('mob-work-heading').classList.remove('open');
     document.getElementById('mob-work-sub').classList.remove('open');
-    h.classList.toggle('open');
-    s.classList.toggle('open');
+    h.classList.toggle('open');s.classList.toggle('open');
   });
 
-  // Work sub-items
+  // Work sub-items in drawer
   document.querySelectorAll('.drawer-sub-item[data-section]').forEach(el=>{
     el.addEventListener('click',()=>{
       const section=el.dataset.section;
@@ -154,7 +181,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   });
 
-  // About sub-items
+  // About sub-items in drawer
   document.querySelectorAll('.drawer-sub-item[data-about]').forEach(el=>{
     el.addEventListener('click',()=>{
       const id=el.dataset.about;
@@ -168,8 +195,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   // Contact in drawer
   document.getElementById('mob-contact-btn').addEventListener('click',()=>{
-    showPage('contact');
-    closeMobileMenu();
+    showPage('contact');closeMobileMenu();
   });
 
   // Desktop nav
@@ -188,5 +214,24 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   // Lightbox
   document.getElementById('lb-close').addEventListener('click',closeLb);
-  document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLb();});
+  document.getElementById('lightbox').addEventListener('click',e=>{
+    if(e.target===e.currentTarget)closeLb();
+  });
+  document.getElementById('lb-prev').addEventListener('click',e=>{
+    e.stopPropagation();
+    if(lbIndex>0){lbIndex--;lbShow();}
+  });
+  document.getElementById('lb-next').addEventListener('click',e=>{
+    e.stopPropagation();
+    if(lbIndex<lbItems.length-1){lbIndex++;lbShow();}
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown',e=>{
+    if(!document.getElementById('lightbox').classList.contains('open'))return;
+    if(e.key==='ArrowLeft'&&lbIndex>0){lbIndex--;lbShow();}
+    if(e.key==='ArrowRight'&&lbIndex<lbItems.length-1){lbIndex++;lbShow();}
+    if(e.key==='Escape')closeLb();
+  });
+
 });
