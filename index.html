@@ -86,12 +86,12 @@
 
   <!-- 6-image grid -->
   <div class="home-grid">
-    <img class="home-grid-img" src="images/home/ceramic_hero.jpg" alt="Ceramic sculpture"/>
-    <img class="home-grid-img" src="images/home/map_hero.jpg" alt="Map drawing"/>
-    <img class="home-grid-img" src="images/home/hero_blue_print.jpg" alt="Blue print"/>
-    <img class="home-grid-img" src="images/home/hero_vase.jpg" alt="Vase print"/>
-    <img class="home-grid-img" src="images/home/purple_print.jpg" alt="Purple print"/>
-    <img class="home-grid-img" src="images/home/black_vase.jpg" alt="Black vase"/>
+    <img class="home-grid-img" src="images/home/ceramic_hero.jpg" alt="Ceramic sculpture" style="cursor:pointer;" onclick="showPage('work');openOnly('ceramics');showCat('ceramics','all',document.querySelector('#lcats-ceramics .leftnav-cat'));"/>
+    <img class="home-grid-img" src="images/home/map_hero.jpg" alt="Map drawing" style="cursor:pointer;" onclick="showPage('work');openOnly('drawings');showCat('drawings','all',document.querySelector('#lcats-drawings .leftnav-cat'));"/>
+    <img class="home-grid-img" src="images/home/hero_blue_print.jpg" alt="Blue print" style="cursor:pointer;" onclick="showPage('work');openOnly('prints');showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));"/>
+    <img class="home-grid-img" src="images/home/hero_vase.jpg" alt="Vase print" style="cursor:pointer;" onclick="showPage('work');openOnly('ceramics');showCat('ceramics','all',document.querySelector('#lcats-ceramics .leftnav-cat'));"/>
+    <img class="home-grid-img" src="images/home/purple_print.jpg" alt="Purple print" style="cursor:pointer;" onclick="showPage('work');openOnly('prints');showCat('prints','all',document.querySelector('#lcats-prints .leftnav-cat'));"/>
+    <img class="home-grid-img" src="images/home/black_vase.jpg" alt="Black vase" style="cursor:pointer;" onclick="showPage('work');openOnly('drawings');showCat('drawings','all',document.querySelector('#lcats-drawings .leftnav-cat'));"/>
   </div>
 
   <!-- Editorial: image left, text right -->
@@ -519,7 +519,7 @@
       <div class="cl">Contact</div>
       <div class="cd">
         <p>Western Massachusetts</p>
-        <a href="mailto:hello@frankozereko.com">hello@frankozereko.com</a>
+        <a href="/cdn-cgi/l/email-protection#731b161f1f1c331501121d181c09160116181c5d101c1e"><span class="__cf_email__" data-cfemail="a5cdc0c9c9cae5c3d7c4cbcecadfc0d7c0ceca8bc6cac8">[email&#160;protected]</span></a>
         <a href="https://www.instagram.com/fozereko" target="_blank">Instagram</a>
       </div>
     </div>
@@ -546,10 +546,12 @@
 
 <div class="lightbox" id="lightbox">
   <button class="lb-close" id="lb-close">✕</button>
+  <button class="lb-prev" id="lb-prev">&#8592;</button>
+  <button class="lb-next" id="lb-next">&#8594;</button>
   <img id="lb-img" src="" style="max-height:80vh;max-width:88vw;object-fit:contain;display:none;"/>
   <div style="margin-top:1rem;text-align:center;">
     <div id="lb-title" style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#fff;"></div>
-    <div id="lb-meta" style="font-size:12px;color:rgba(255,255,255,.5);font-family:'Rubik',sans-serif;margin-top:.25rem;font-italic;"></div>
+    <div id="lb-meta" style="font-size:12px;color:rgba(255,255,255,.5);font-family:'Rubik',sans-serif;margin-top:.25rem;font-style:italic;"></div>
   </div>
 </div>
 
