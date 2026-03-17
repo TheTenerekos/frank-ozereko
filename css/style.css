@@ -105,6 +105,16 @@ footer{background:#2e2c28;margin-top:auto;overflow:hidden;}
 .lightbox.open{display:flex;}
 .lb-close{position:absolute;top:2rem;right:2rem;color:#fff;font-size:16px;cursor:pointer;opacity:.55;background:none;border:none;font-family:'Rubik',sans-serif;}
 .lb-close:hover{opacity:1;}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:28px;cursor:pointer;opacity:.55;padding:1rem;transition:opacity .2s;line-height:1;}
+.lb-prev{left:1.5rem;}
+.lb-next{right:1.5rem;}
+.lb-prev:hover,.lb-next:hover{opacity:1;}
+.lb-prev.hidden,.lb-next.hidden{display:none;}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;opacity:.45;padding:1rem;transition:opacity .2s;font-family:'Rubik',sans-serif;}
+.lb-prev{left:1.5rem;}
+.lb-next{right:1.5rem;}
+.lb-prev:hover,.lb-next:hover{opacity:1;}
+.lb-prev.hidden,.lb-next.hidden{display:none;}
 /* ─────────────────────────────────────────────
    HAMBURGER
 ───────────────────────────────────────────── */
