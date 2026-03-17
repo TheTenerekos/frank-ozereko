@@ -57,7 +57,7 @@ const GD = {
     all: [
       { s: 'images/drawings/maps_01.jpg', t: 'Map Study I', m: 'Mixed media on map, 2024', r: '3/4' },
       { s: 'images/drawings/maps_02.jpg', t: 'Map Study II', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_03.jpg', t: 'Map Study III', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_03.jpg', t: 'Plate 43', m: 'Drawing on paper, 17.5" x 12", 2025', r: '3/4' },
       { s: 'images/drawings/maps_04.jpg', t: 'Map Study IV', m: 'Mixed media on map, 2024', r: '3/4' },
       { s: 'images/drawings/maps_05.jpg', t: 'Map Study V', m: 'Mixed media on map, 2024', r: '3/4' },
       { s: 'images/drawings/maps_06.jpg', t: 'Map Study VI', m: 'Mixed media on map, 2024', r: '3/4' },
