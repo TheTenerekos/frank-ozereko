@@ -57,7 +57,7 @@ const GD = {
   },
 
   ceramics: {
-    all: [
+    vases: [
       { s: 'images/ceramics/vase_01.jpg', t: 'Vase and Flower', m: 'Cone 6, 18" x 14" x 6", 2025', r: '3/4' },
       { s: 'images/ceramics/vase_02.jpg', t: 'Vase and Flower', m: 'Cone 10 woodfire, 18" x 11" x 4", 2025', r: '3/4' },
       { s: 'images/ceramics/vase_03.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '4/3' },
@@ -71,7 +71,7 @@ const GD = {
   },
 
   drawings: {
-    all: [
+    maps: [
       { s: 'images/drawings/maps_01.jpg', t: 'Map Study I', m: 'Mixed media on map, 2024', r: '3/4' },
       { s: 'images/drawings/maps_02.jpg', t: 'Map Study II', m: 'Mixed media on map, 2024', r: '3/4' },
       { s: 'images/drawings/maps_03.jpg', t: 'Plate 43', m: 'Drawing on paper, 17.5" x 12", 2025', r: '3/4' },
@@ -91,35 +91,14 @@ const GD = {
       { s: 'images/drawings/maps_17.jpg', t: 'Map Study XVII', m: 'Mixed media on map, 2024', r: '3/4' },
       { s: 'images/drawings/maps_18.jpg', t: 'Map Study XVIII', m: 'Mixed media on map, 2024', r: '3/4' },
       { s: 'images/drawings/maps_19.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_20.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_21.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_22.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_23.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_24.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_25.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_26.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_27.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
-    ],
-    maps: [
-      { s: 'images/drawings/maps_01.jpg', t: 'Map Study I', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_02.jpg', t: 'Map Study II', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_03.jpg', t: 'Map Study III', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_04.jpg', t: 'Map Study IV', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_05.jpg', t: 'Map Study V', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_06.jpg', t: 'Map Study VI', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_07.jpg', t: 'Map Study VII', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_08.jpg', t: 'Map Study VIII', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_09.jpg', t: 'Map Study IX', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_10.jpg', t: 'Map Study X', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_11.jpg', t: 'Map Study XI', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_12.jpg', t: 'Map Study XII', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_13.jpg', t: 'Map Study XIII', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_14.jpg', t: 'Map Study XIV', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_15.jpg', t: 'Map Study XV', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_16.jpg', t: 'Map Study XVI', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_17.jpg', t: 'Map Study XVII', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_18.jpg', t: 'Map Study XVIII', m: 'Mixed media on map, 2024', r: '3/4' },
-      { s: 'images/drawings/maps_19.jpg', t: 'Map Study XIX', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_20.jpg', t: 'Map Study XX', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_21.jpg', t: 'Map Study XXI', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_22.jpg', t: 'Map Study XXII', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_23.jpg', t: 'Map Study XXIII', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_24.jpg', t: 'Map Study XXIV', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_25.jpg', t: 'Map Study XXV', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_26.jpg', t: 'Map Study XXVI', m: 'Mixed media on map, 2024', r: '3/4' },
+      { s: 'images/drawings/maps_27.jpg', t: 'Map Study XXVII', m: 'Mixed media on map, 2024', r: '3/4' },
     ],
   },
 
