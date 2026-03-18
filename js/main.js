@@ -7,7 +7,9 @@ function gi(item){
   img.style.cssText=`aspect-ratio:${item.r};width:100%;object-fit:cover;`;
   img.loading='lazy';
   d.appendChild(img);
-  d.innerHTML+=`<div class="il"><div class="it">${item.t}</div><div class="im">${item.m}</div></div>`;
+  const edition=item.e||'Unique';
+  const price=item.p||'Available — Inquire';
+  d.innerHTML+=`<div class="il"><div class="it">${item.t}</div><div class="im">${item.m}</div><div class="ie">${edition}</div><div class="ip">${price}</div></div>`;
   d.addEventListener('click',()=>lb(item.t,item.m,item.s));
   return d;
 }
@@ -118,6 +120,8 @@ function lbShow(){
   if(!item)return;
   document.getElementById('lb-title').textContent=item.t;
   document.getElementById('lb-meta').textContent=item.m;
+  document.getElementById('lb-edition').textContent=item.e||'Unique';
+  document.getElementById('lb-price').textContent=item.p||'Available — Inquire';
   const img=document.getElementById('lb-img');
   img.src=item.s;img.style.display='block';
   // show/hide arrows
