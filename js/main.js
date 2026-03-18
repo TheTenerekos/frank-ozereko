@@ -7,9 +7,8 @@ function gi(item){
   img.style.cssText=`aspect-ratio:${item.r};width:100%;object-fit:cover;`;
   img.loading='lazy';
   d.appendChild(img);
-  const edition=item.e||'Unique';
   const price=item.p||'Available — Inquire';
-  d.innerHTML+=`<div class="il"><div class="it">${item.t}</div><div class="im">${item.m}</div><div class="ie">${edition}</div><div class="ip">${price}</div></div>`;
+  d.innerHTML+=`<div class="il"><div class="it">${item.t}</div><div class="im">${item.m}</div><div class="ip">${price}</div></div>`;
   d.addEventListener('click',()=>lb(item.t,item.m,item.s));
   return d;
 }
@@ -49,7 +48,7 @@ function buildView(id,section,cat){
   const accent=accents[section]||'#7abfb4';
   const sl=section.charAt(0).toUpperCase()+section.slice(1);
   const cl=cat==='all'?'All works':cat.charAt(0).toUpperCase()+cat.slice(1);
-  v.innerHTML=`<div class="accent-rule" style="background:${accent};"></div><div class="work-section-heading">${sl}</div><div class="work-section-meta">${cl}</div><div class="gb"></div>`;
+  v.innerHTML=`<div class="accent-rule" style="background:${accent};"></div><div class="work-section-heading">${sl}</div><div class="work-section-meta">${cl}</div><div class="work-section-note">All works are unique monoprints</div><div class="gb"></div>`;
   area.appendChild(v);
   const items=cat==='all'?Object.values(GD[section]).flat():GD[section][cat]||[];
   buildRows(items,v.querySelector('.gb'));
@@ -120,7 +119,6 @@ function lbShow(){
   if(!item)return;
   document.getElementById('lb-title').textContent=item.t;
   document.getElementById('lb-meta').textContent=item.m;
-  document.getElementById('lb-edition').textContent=item.e||'Unique';
   document.getElementById('lb-price').textContent=item.p||'Available — Inquire';
   const img=document.getElementById('lb-img');
   img.src=item.s;img.style.display='block';
