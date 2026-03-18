@@ -136,6 +136,7 @@ function closeMobileMenu(){
 
 // ── Init ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded',()=>{
+  window.scrollTo(0,0);
 
   // Hamburger
   document.getElementById('hamburger').addEventListener('click',()=>{
