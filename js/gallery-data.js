@@ -2,14 +2,14 @@ const GD = {
 
   prints: {
     portraits: [
-      { s: 'images/prints/portraits_01.jpg', t: 'Portrait — Vase with Plant', m: 'Etching, 2024', r: '3/4' },
+      { s: 'images/prints/portraits_01.jpg', t: 'Untitled', m: 'Etching, 2024', r: '3/4' },
       { s: 'images/prints/portraits_02.jpg', t: "Dressmaker's Dummy", m: 'Monoprint, 2024', r: '3/4' },
       { s: 'images/prints/portraits_03.jpg', t: 'Untitled', m: 'Print, 2024', r: '3/4' },
-      { s: 'images/prints/portraits_04.jpg', t: 'Untitled II', m: 'Print, 2024', r: '3/4' },
-      { s: 'images/prints/portraits_05.jpg', t: 'Untitled III', m: 'Print, 2024', r: '3/4' },
-      { s: 'images/prints/portraits_06.jpg', t: 'Untitled IV', m: 'Print, 2024', r: '3/4' },
-      { s: 'images/prints/portraits_07.jpg', t: '#037-2025', m: 'Monoprint, 17.5" x 23", 2025', r: '3/4' },
-      { s: 'images/prints/portraits_08.jpg', t: '#001-2026', m: 'Monoprint, 17.5" x 23", 2026', r: '3/4' },
+      { s: 'images/prints/portraits_04.jpg', t: 'Untitled', m: 'Print, 2024', r: '3/4' },
+      { s: 'images/prints/portraits_05.jpg', t: 'Untitled', m: 'Print, 2024', r: '3/4' },
+      { s: 'images/prints/portraits_06.jpg', t: 'Untitled', m: 'Print, 2024', r: '3/4' },
+      { s: 'images/prints/portraits_07.jpg', t: '#37-2025', m: 'Monoprint, 17.5" x 23", 2025', r: '3/4' },
+      { s: 'images/prints/portraits_08.jpg', t: '#1-2026', m: 'Monoprint, 17.5" x 23", 2026', r: '3/4' },
       { s: 'images/prints/portraits_09.jpg', t: 'Untitled', m: 'Monoprint, 17.5" x 23", 2026', r: '3/4' },
       { s: 'images/prints/portraits_10.jpg', t: 'Untitled', m: 'Monoprint, 17.5" x 23", 2025', r: '3/4' },
       { s: 'images/prints/portraits_11.jpg', t: 'Untitled', m: 'Monoprint, 17.5" x 23", 2025', r: '3/4' },
