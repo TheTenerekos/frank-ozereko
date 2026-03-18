@@ -48,7 +48,9 @@ function buildView(id,section,cat){
   const accent=accents[section]||'#7abfb4';
   const sl=section.charAt(0).toUpperCase()+section.slice(1);
   const cl=cat==='all'?'All works':cat.charAt(0).toUpperCase()+cat.slice(1);
-  v.innerHTML=`<div class="accent-rule" style="background:${accent};"></div><div class="work-section-heading">${sl}</div><div class="work-section-meta">${cl}</div><div class="work-section-note">All works are unique monoprints</div><div class="gb"></div>`;
+  const notes={prints:'All works are unique monoprints',ceramics:'All works are unique',drawings:'All works are unique'};
+  const note=notes[section]||'All works are unique';
+  v.innerHTML=`<div class="accent-rule" style="background:${accent};"></div><div class="work-section-heading">${sl}</div><div class="work-section-meta">${cl}</div><div class="work-section-note">${note}</div><div class="gb"></div>`;
   area.appendChild(v);
   const items=cat==='all'?Object.values(GD[section]).flat():GD[section][cat]||[];
   buildRows(items,v.querySelector('.gb'));
