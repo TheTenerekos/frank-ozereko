@@ -53,7 +53,11 @@ const GD = {
       { s: 'images/prints/assembly_08.jpg', t: 'Assembly', m: 'Monoprint, 2024', r: '4/3' },
     ],
     stilllives: [],
-    abstract: [],
+    abstract: [
+      { s: 'images/prints/abstract_01.jpeg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
+      { s: 'images/prints/abstract_02.jpeg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
+      { s: 'images/prints/abstract_03.jpeg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
+    ],
   },
 
   ceramics: {
