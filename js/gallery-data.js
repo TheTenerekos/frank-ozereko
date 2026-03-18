@@ -67,6 +67,11 @@ const GD = {
       { s: 'images/ceramics/vase_07.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
       { s: 'images/ceramics/vase_08.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '4/3' },
       { s: 'images/ceramics/vase_09.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_10.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_11.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_12.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_13.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
+      { s: 'images/ceramics/vase_14.jpg', t: 'Vase', m: 'Ceramic, 2025', r: '3/4' },
     ],
   },
 
