@@ -62,8 +62,8 @@ function showCat(section,cat,btn){
   else document.getElementById('cv-'+id).classList.add('active');
   document.querySelectorAll('#lcats-'+section+' .leftnav-cat').forEach(c=>c.classList.remove('active'));
   if(btn)btn.classList.add('active');
-  // store current items for lightbox navigation
   lbItems=cat==='all'?Object.values(GD[section]).flat():GD[section][cat]||[];
+  window.scrollTo(0,0);
 }
 
 // ── Left nav helpers ──────────────────────────────────────────
