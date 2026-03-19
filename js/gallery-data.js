@@ -54,9 +54,9 @@ const GD = {
     ],
     stilllives: [],
     abstract: [
-      { s: 'images/prints/abstract_01.jpeg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
-      { s: 'images/prints/abstract_02.jpeg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
-      { s: 'images/prints/abstract_03.jpeg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
+      { s: 'images/prints/abstract_01.jpg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
+      { s: 'images/prints/abstract_02.jpg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
+      { s: 'images/prints/abstract_03.jpg', t: 'Untitled', m: 'Monoprint, 2024', r: '4/3' },
     ],
   },
 
